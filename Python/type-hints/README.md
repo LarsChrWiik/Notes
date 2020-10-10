@@ -12,6 +12,7 @@
 * Python 3.5 - Function type hints was released
 * Python 3.6 - Variable type hints was released
 * Python 3.7 - Future annotations was released (It must be placed before all other imports)
+* Python 3.8 - TypedDict was added
 * Python 3.9 - No need anymore to import the *typing* module for standard types, it is now incorporated
 * Python 4.0 - Future annotations will supposedly be incorporated without needing import
 
