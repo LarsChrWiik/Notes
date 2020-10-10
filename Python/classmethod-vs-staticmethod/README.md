@@ -1,0 +1,3 @@
+
+# ClassMethod vs Staticmethod
+TODO
