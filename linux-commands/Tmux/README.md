@@ -15,3 +15,6 @@ Run:
 ```
 tmux set -g mouse on
 ```
+
+### How to be able to copy paste
+Prefix + r
