@@ -10,7 +10,7 @@ Prefix + o = change window
 
 Prefix + b = change window
 
-### How to be able to scroll with mouse
+### How to be able to use the mouse for changing window and scroll
 Run:
 ```
 tmux set -g mouse on
