@@ -8,7 +8,7 @@ Prefix + " = new window (split screen horizontal)
 
 Prefix + o = change window
 
-Prefix + b = change window
+Prefix + x = kill window
 
 ### How to be able to use the mouse for changing window and scroll
 Run:
