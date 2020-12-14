@@ -542,6 +542,17 @@ import org.apache.spark.sql.functions.not
 df.withColumn("myCol", when(not($"myCol".contains("\"")), lit("INVALID_FORMAT")).otherwise($"myCol")) 
 ```
 
+### groupby + Agg + fraction calculation
+```
+import org.apache.spark.sql.functions.{col, count, avg, round, lit, concat}
+
+val df2 = df
+  .groupBy("myCol1", "myCol2")
+  .agg(count("myCol3") as "myCustomName1", round(avg("myCol4"), 1) as "myCustomName2")
+  .orderBy(col("myCol1").asc)
+  .withColumn("fraction", concat(lit(round(col("myCustomName1") * 100 / df2.count, 1)), lit("%")))
+```
+
 ### TODO
 * .toPandas()
 * .limit()
