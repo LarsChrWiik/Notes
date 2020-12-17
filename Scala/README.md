@@ -20,16 +20,7 @@
 
 
 # Scala-Syntax
-
-### Hello World Program
-```
-object HelloWorld{
-    def main(args: Array[String]) {
-        println("Hello World!")
-    }
-}
-```
-
+See Notebook
 
 
 # Setting up Intellij with Scala (Gradle)
