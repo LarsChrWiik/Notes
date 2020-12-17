@@ -1,0 +1,13 @@
+2020.12.17 10:30:47 INFO  Started: Metals version 0.9.7 in workspace '/Users/lars.christian.wiik/GitRepos/Lars/Notes/Scala' for client vscode.
+2020.12.17 10:30:47 INFO  time: initialize in 0.39s
+2020.12.17 10:30:48 WARN  Build server is not auto-connectable.
+2020.12.17 10:30:48 WARN  no build tool detected in workspace '/Users/lars.christian.wiik/GitRepos/Lars/Notes/Scala'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.17 10:30:48 WARN  no build target for: /Users/lars.christian.wiik/GitRepos/Lars/Notes/Scala/examples/src/main/scala/ScalaExamples/TheBasics.scala
+2020.12.17 10:30:49 INFO  no build target: using presentation compiler with only scala-library
+2020.12.17 10:32:01 WARN  no build target for: /Users/lars.christian.wiik/GitRepos/Lars/Notes/Scala/examples/src/main/scala/ScalaExamples/TheBasics.scala
+Dec 17, 2020 10:32:14 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+2020.12.17 10:32:27 WARN  no build target for: /Users/lars.christian.wiik/GitRepos/Lars/Notes/Scala/examples/src/main/scala/ScalaExamples/TheBasics.scala
+2020.12.17 10:32:29 WARN  no build target for: /Users/lars.christian.wiik/GitRepos/Lars/Notes/Scala/examples/src/main/scala/ScalaExamples/TheBasics.scala
+2020.12.17 10:32:36 WARN  no build target for: /Users/lars.christian.wiik/GitRepos/Lars/Notes/Scala/examples/src/main/scala/ScalaExamples/TheBasics.scala
+2020.12.17 10:32:39 INFO  shutting down Metals
