@@ -1,4 +1,4 @@
-# Python-Expert-Notes
+# Python
 Python notes by Lars
 
 ### Doc
