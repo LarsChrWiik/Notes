@@ -8,3 +8,10 @@ To install the package using the setup file, run:
 ```
 pip install . 
 ```
+
+Requirements are usually within the setup.py.
+**requirements.txt** therefore needs to point to the setup file to allow installation through the requirements file.
+```
+# Read dependencies from setup.py in same folder
+.
+```
