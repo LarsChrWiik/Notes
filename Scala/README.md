@@ -20,7 +20,9 @@
 
 
 # Scala-Syntax
-See Notebook
+Learn TODO:
+* foldLeft and foldRight
+* groupBy
 
 
 # Setting up Intellij with Scala (Gradle)
