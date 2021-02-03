@@ -24,6 +24,25 @@ Learn TODO:
 * foldLeft and foldRight
 * groupBy
 
+Reading S3 lines and splitting it into a Map[String, List[String]]
+```Scala
+val deletion_map: Map[String, List[String]] = {
+  val source = scala.io.Source.fromFile(filename)
+  try
+    source.getLines().foldLeft(Map.empty[String, List[String]]) {
+      case (acc, line) =>
+        if (line == "") acc
+        else {
+          val bucket_obj = line.split("/", 2)
+          val bucket = bucket_obj(0)
+          val obj = bucket_obj(1)
+          val existingObjects = acc.getOrElse(bucket, List())
+          acc.updated(bucket, obj :: existingObjects)
+        }
+    }
+  finally source.close()
+}
+```
 
 # Setting up Intellij with Scala (Gradle)
 See: https://github.com/LarsChrWiik/Spark-Info/tree/master/SparkSetupTemplate
