@@ -29,7 +29,8 @@ names.txt | grep "Lars"
 ### grep options
 * **-E**: (--extended-regexp) extends grep regex.
 * **-P**: (--perl-regexp) Perl modifier for perl regex. 
-* **-o**: Shows only what is matching the grep.
+* **-o**: (--only-matching) Only output what is matched on.
+* **-v**: (--invert-match) Do not match on given value.
 
 ### Regular expression
 Mac uses **BSD grep**, while Linux uses **GNU-grep**.
