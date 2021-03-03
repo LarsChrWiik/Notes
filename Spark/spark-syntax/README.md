@@ -585,6 +585,11 @@ jdbcDF = spark.read \
 df.join(df2, Seq(Keys.myColumnName1, Keys.myColumnName2), "outer").na.fill("0")
 ```
 
+```
+val resultDf = df1
+  .join(df2, df1("idCol") === df2("otherIdCol"))
+```
+
 ### Example of using Delta Storage
 https://docs.delta.io/latest/quick-start.html
 
