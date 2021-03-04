@@ -340,6 +340,11 @@ df2 = df.orderBy(col("myColumn").desc)
 df2 = df.orderBy(col("myColumn").asc, col("myColumn2").asc)
 ```
 
+### How to add row number as column
+```
+df.withColumn("rowNum", monotonicallyIncreasingId)
+```
+
 ### limit
 The *limit* transformation returns a new DataFrame by taking the first n rows. Limit is commonly used after sorting to return the top *n* or bottom *n* rows. 
 ```
