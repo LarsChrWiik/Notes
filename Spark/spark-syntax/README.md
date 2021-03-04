@@ -342,7 +342,7 @@ df2 = df.orderBy(col("myColumn").asc, col("myColumn2").asc)
 
 ### How to add row number as column
 ```
-df.withColumn("rowNum", monotonicallyIncreasingId)
+df.withColumn("rowNum", monotonically_increasing_id())
 ```
 
 ### limit
