@@ -232,7 +232,7 @@ println(df.head())
 ```
 
 ### Print first column transposed Dataframe
-Tag: shaow transpose dataframe
+Tag: show transpose dataframe
 ```
 df.show(5, 0, false)
 ```
