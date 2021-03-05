@@ -30,66 +30,7 @@ Before submitting a Scala program, it must be compiled to *.jar* file (for examp
 spark-submit --class "HelloWorld" myPySparkJob.jar [arg1, arg2, ...]
 ```
 
-### Create DataFrame
-DataFrames can be created with the *implicits* function *toDF()*. To be able to use this function, *spark.implicits._* must be imported. 
-```
-import spark.implicits._
-```
 
-Create a DataFrame using **toDF()**:
-```
-val df = Seq(
-  "this is cell one",
-  "cell2",
-  "and cell 3"
-).toDF("myColumnName")
-```
-```
-val df = Seq(
-  ("this is a cell in column one", "cell in column two"),
-  ("another cell", "another cell"),
-  ("acb", "hello"),
-).toDF("columnOneName", "columnTwoName")
-```
-
-Create a DataFrame and specify schema using **createDataFrame()**:
-```
-val myData = Seq(
-  (9, "Stephanie"),
-  (6, "Camilla"),
-  (-2, "Kristine")
-)
-
-val mySchema = List(
-  StructField("number", IntegerType, true),
-  StructField("word", StringType, true)
-)
-
-val df = spark.createDataFrame(
-  spark.sparkContext.parallelize(myData),
-  StructType(mySchema)
-)
-```
-
-Create a DataFrame and specify schema using **createDF()** from *spark-daria*. 
-```
-val someDF = spark.createDF(
-  List(
-    (9, "Stephanie"),
-    (6, "Camilla"),
-    (-2, "Kristine")
-  ), List(
-    ("number", IntegerType, true),
-    ("word", StringType, true)
-  )
-)
-```
-
-### Print Schema of DataFrame
-If schema is not infered or set by the user, Spark reads everything as the datatype "String". 
-```
-df.printSchema()
-```
 
 # Read file in Spark
 There are several "option"s that can be overwritten. 
@@ -159,6 +100,36 @@ paths.map(path => myFunc(spark.read.parquet(path))).reduce((df1, df2) => df1.uni
 spark.read.parquet("this/my/folder/path/myfolder/hour=[0-23]")
 ```
 
+### Escape chracter when reading
+Specify a the character used to escape the next character in the column value. 
+```
+.option('escape', '\')
+```
+
+
+
+# Print of DataFrame
+
+### Print first elements
+```
+df.show(10)
+```
+
+### Print first column transposed Dataframe
+Tag: show transpose dataframe
+```
+df.show(5, 0, false)
+```
+* This will show 5 rows, transpose the df, and not truncate columns
+
+
+### Print Schema of DataFrame
+If schema is not infered or set by the user, Spark reads everything as the datatype "String". 
+```
+df.printSchema()
+```
+
+
 
 # Write file in Spark
 
@@ -175,6 +146,9 @@ df.write.format("csv")
 ```
 
 ### Write CSV
+```
+df.write.csv...
+```
 ```
 df.write.format("csv")...
 ```
@@ -193,6 +167,69 @@ df.repartition(NUM_PARTITIONS).write.format("parquet")...
 ```
 df.write.option("maxRecordsPerFile", NUM_ROWS_PER_PARTITION).format("parquet")...
 ```
+
+
+
+# Create DataFrame
+Is is normal to read a dataframe from a storage place, but it is also possible to create a dataframe manually.
+This can be used for creating tests for example.
+
+DataFrames can be created with the *implicits* function *toDF()*. 
+*spark.implicits._* must be imported to be able to use this function.
+```
+import spark.implicits._
+```
+
+Create a DataFrame using **toDF()**:
+```
+val df = Seq(
+  "this is cell one",
+  "cell2",
+  "and cell 3"
+).toDF("myColumnName")
+```
+```
+val df = Seq(
+  ("this is a cell in column one", "cell in column two"),
+  ("another cell", "another cell"),
+  ("acb", "hello"),
+).toDF("columnOneName", "columnTwoName")
+```
+
+Create a DataFrame and specify schema using **createDataFrame()**:
+```
+val myData = Seq(
+  (9, "Stephanie"),
+  (6, "Camilla"),
+  (-2, "Kristine")
+)
+
+val mySchema = List(
+  StructField("number", IntegerType, true),
+  StructField("word", StringType, true)
+)
+
+val df = spark.createDataFrame(
+  spark.sparkContext.parallelize(myData),
+  StructType(mySchema)
+)
+```
+
+Create a DataFrame and specify schema using **createDF()** from *spark-daria*. 
+```
+val someDF = spark.createDF(
+  List(
+    (9, "Stephanie"),
+    (6, "Camilla"),
+    (-2, "Kristine")
+  ), List(
+    ("number", IntegerType, true),
+    ("word", StringType, true)
+  )
+)
+```
+
+
 
 # Working with DataFrame Columns
 Columns are specified as either *Strings* or as in instance of the *Column class*. The column class are used to do mathematical operations, logical comparisons, or string pattern matching. 
@@ -226,22 +263,7 @@ When using column expression, we must include an instance of a column class. Thi
 df.select(col("age"), col("age") >= 18)
 ```
 
-### Print first element
-```
-println(df.head())
-```
 
-### Print first column transposed Dataframe
-Tag: show transpose dataframe
-```
-df.show(5, 0, false)
-```
-* This will show 5 rows, transpose the df, and not truncate columns
-
-### Alias - Rename Column 
-```
-df.select(col("age"), (col("age") >= 18).alias("adult"))
-```
 
 # DataFrame Transformation
 There are several DataFrame transformations. See: https://spark.apache.org/docs/2.3.0/rdd-programming-guide.html
@@ -288,6 +310,12 @@ val dfNew = df.filter(col("age") >= 18)
 ```
 ```
 val dfNew = df.filter(col("age").isNotNull)
+```
+
+
+### Alias - Rename Column 
+```
+df.select(col("age"), (col("age") >= 18).alias("adult"))
 ```
 
 ### Union / UnionAll
@@ -397,6 +425,72 @@ The *sample* transformation returns randomly selected rows from the DataFrame gi
 df2 = df.sample(False, 0.1)
 ```
 
+### Where / Filter and Not
+```
+df.where(col("foo") > 0)
+df.where((col("foo") > 0) & (col("bar") < 0))
+```
+```
+df
+ .where($"myCol".contains("www.mydomain."))
+ .where(!$"myCol".contains("google"))
+```
+```
+df.where($"myCol".contains("www.mydomain.") && not($"myCol".contains("google")))
+```
+
+### Map / WithColumn When and Not
+```
+df.withColumn("myCol", when($"myCol".contains("\""), lit("INVALID_FORMAT")).otherwise($"myCol")) 
+```
+```
+import org.apache.spark.sql.functions.not
+df.withColumn("myCol", when(not($"myCol".contains("\"")), lit("INVALID_FORMAT")).otherwise($"myCol")) 
+```
+```
+df
+  .withColumn("myNewCol", 
+              when($"mycol1" > 0 && $"mycol2" > 0, lit("Both is bigger"))
+              .when($"mycol1" > 0 && $"mycol2" === 0, lit("mycol1 is bigger"))
+              .when($"mycol1" === 0 && $"mycol2" > 0, lit("mycol2 is bigger"))
+              .otherwise(lit("both is 0")))
+```
+
+### groupby + Agg + fraction calculation
+```
+import org.apache.spark.sql.functions.{col, count, avg, round, lit, concat}
+
+val df2 = df
+  .groupBy("myCol1", "myCol2")
+  .agg(count("myCol3") as "myCustomName1", round(avg("myCol4"), 1) as "myCustomName2")
+  .orderBy(col("myCol1").asc)
+  .withColumn("fraction", concat(lit(round(col("myCustomName1") * 100 / df2.count, 1)), lit("%")))
+```
+
+### Join
+```
+df.join(df2, Seq(Keys.myColumnName1, Keys.myColumnName2), "outer").na.fill("0")
+```
+
+```
+val resultDf = df1
+  .join(df2, df1("idCol") === df2("otherIdCol"))
+```
+
+### Pivot Table
+```
+val df3 = df2.groupBy($"myCol1", $"myCol2")
+  .pivot("myCol3")
+  .agg(count($"myCol4"))
+```
+
+### CountDistinct
+```
+df.groupBy(...).agg(countDistinct(...)
+```
+
+
+
 # DataFrame Actions / Usefull functions
 Actions are eagerly evaluated and therefore triggers all stored transformations within DataFrames. 
 
@@ -432,50 +526,9 @@ df.na.drop(Array("myColumn"))
 
 
 
-# Datasets
-https://spark.apache.org/docs/2.3.0/api/java/index.html?org/apache/spark/sql/Dataset.html
+# Spark SQL
 
-The Dataset APIs are available in only strongly typed languages such as **Scala** and **Java**. Dataset is newer than the DataFrame. Dataset is mapped to a defined schema. Datasets are strongly typed and object-oriented. The Dataset APIs are good for production jobs that need to run on a regular basis and are written and maintained by data engineers. For most interactive and explorative analysis use cases, using the DataFrame APIs would be sufficient.
-
-DataSet might want to be chosen instead of DataFrame when it is desired to have a higher degree of type safety at compile time.
-
-To convert a DataFrame to a Dataset, we first need to define a case class and then to the convertion. 
-```
-case class Person(firstname:String, lastname:String, age:Long)
-val moviesDS = df_persons.as[Person]
-```
-
-
-
-
-
-
-<br><br><br><br><br>
-
-
-
-
-
-
-### Parsing error
-By default, when Spark encounters a corrupted record or runs into a parsing error, it will set the value of all the columns in that row to null. 
-
-However, we can tell spark to fail when there is a parsing error by using the failFast mode:
-```
-.option("mode","failFast")
-```
-
-
-
-
-
-### Escape chracter when reading
-Specify a the character used to escape the next character in the column value. 
-```
-.option('escape', '\')
-```
-
-### Spark SQL
+### Spark SQL select
 ```
 spark.sql("SELECT * from myTable")
 ```
@@ -531,60 +584,9 @@ spark.sql('select * from parquet.<path>/myfile.tablename.parquet')
 spark.catalog.listTables.show
 ```
 
-### Where / Filter and Not
-```
-df.where(col("foo") > 0)
-df.where((col("foo") > 0) & (col("bar") < 0))
-```
-```
-df
- .where($"myCol".contains("www.mydomain."))
- .where(!$"myCol".contains("google"))
-```
-```
-df.where($"myCol".contains("www.mydomain.") && not($"myCol".contains("google")))
-```
 
-### Map / WithColumn When and Not
-```
-df.withColumn("myCol", when($"myCol".contains("\""), lit("INVALID_FORMAT")).otherwise($"myCol")) 
-```
-```
-import org.apache.spark.sql.functions.not
-df.withColumn("myCol", when(not($"myCol".contains("\"")), lit("INVALID_FORMAT")).otherwise($"myCol")) 
-```
-```
-df
-  .withColumn("myNewCol", 
-              when($"mycol1" > 0 && $"mycol2" > 0, lit("Both is bigger"))
-              .when($"mycol1" > 0 && $"mycol2" === 0, lit("mycol1 is bigger"))
-              .when($"mycol1" === 0 && $"mycol2" > 0, lit("mycol2 is bigger"))
-              .otherwise(lit("both is 0")))
-```
 
-### groupby + Agg + fraction calculation
-```
-import org.apache.spark.sql.functions.{col, count, avg, round, lit, concat}
-
-val df2 = df
-  .groupBy("myCol1", "myCol2")
-  .agg(count("myCol3") as "myCustomName1", round(avg("myCol4"), 1) as "myCustomName2")
-  .orderBy(col("myCol1").asc)
-  .withColumn("fraction", concat(lit(round(col("myCustomName1") * 100 / df2.count, 1)), lit("%")))
-```
-
-### Create DataFrame
-```
-spark.createDataFrame(my_list, col_name).show()
-```
-
-### Filtering
-Same as in Pandas. 
-```
-ds[(ds.Newspaper < 20) & (ds.TV > 100)].show(4)
-```
-
-## Connection to JDBC
+# Connection to JDBC
 Filterings in a JDBC connection are pushed down to the actual database, which reduces the amount of data Spark needs to read. 
 ```
 jdbcDF = spark.read \
@@ -596,15 +598,60 @@ jdbcDF = spark.read \
     .load()
 ```
 
-### Join
+
+
+# Partition optimization
+All partitions become tasks within stages of execution. Because each partition can be operated on in parallel, that means that your processing jobs can be distributed evenly across all of your available Spark Executors. (Spark Executors are the JVM processes running on your Spark Workers). 
+
+
+
+# Cache
+Using cache appropriately within Apache Spark allows you to be a master over your available resources. 
+
+Memory is not free, although it can be cheap, but in many cases the cost to store a DataFrame in memory is actually more expensive in the long run than going back to the source of truth dataset. If you have taken a look at the Spark UI (runs on port 4040 when spark.ui.enabled is set to true) and have determined that you can’t squeeze performance out of the system, then you are a candidate for applying caching.
+
+Mainly if the most time taken during your computations is loading data from System A or B or C (say HDFS or MySQL or Redis) and you can’t speed up anymore by scaling out. Scaling out with spark means adding more CPU cores across more RAM across more Machines. Then you can start to look at selectively caching portions of your most expensive computations.
+
+Dataset's persist and cache operators are lazy (contrary to SQL's CACHE TABLE queries) and hence after the following it won't be really cached. That leads to a pattern where people execute head or count actions to trigger caching.
+
+
+
+# Datasets
+https://spark.apache.org/docs/2.3.0/api/java/index.html?org/apache/spark/sql/Dataset.html
+
+The Dataset APIs are available in only strongly typed languages such as **Scala** and **Java**. Dataset is newer than the DataFrame. Dataset is mapped to a defined schema. Datasets are strongly typed and object-oriented. The Dataset APIs are good for production jobs that need to run on a regular basis and are written and maintained by data engineers. For most interactive and explorative analysis use cases, using the DataFrame APIs would be sufficient.
+
+DataSet might want to be chosen instead of DataFrame when it is desired to have a higher degree of type safety at compile time.
+
+To convert a DataFrame to a Dataset, we first need to define a case class and then to the convertion. 
 ```
-df.join(df2, Seq(Keys.myColumnName1, Keys.myColumnName2), "outer").na.fill("0")
+case class Person(firstname:String, lastname:String, age:Long)
+val moviesDS = df_persons.as[Person]
 ```
 
+
+
+<br><br><br><br><br>
+
+
+
+### Parsing error
+By default, when Spark encounters a corrupted record or runs into a parsing error, it will set the value of all the columns in that row to null. 
+
+However, we can tell spark to fail when there is a parsing error by using the failFast mode:
 ```
-val resultDf = df1
-  .join(df2, df1("idCol") === df2("otherIdCol"))
+.option("mode","failFast")
 ```
+
+
+
+### Filtering in DataSet ???
+Same as in Pandas. 
+```
+ds[(ds.Newspaper < 20) & (ds.TV > 100)].show(4)
+```
+
+
 
 ### Example of using Delta Storage
 https://docs.delta.io/latest/quick-start.html
@@ -630,18 +677,6 @@ df2.write.format("delta").mode('overwrite').save('hdfs://namenode/path_to_output
 Run spark-submit and specify the package: 
 ```
 spark-submit --packages io.delta:delta-core_2.11:0.4.0 mytestlars.py
-```
-
-### Pivot Table
-```
-val df3 = df2.groupBy($"myCol1", $"myCol2")
-  .pivot("myCol3")
-  .agg(count($"myCol4"))
-```
-
-### CountDistinct
-```
-df.groupBy(...).agg(countDistinct(...)
 ```
 
 ### User Defined Functions (UDF) / Map function on column
@@ -712,25 +747,7 @@ val df2 = df.withColumn("myCol", col("myCol").cast(IntegerType)).filter(col("myC
 # Scala Examples
 
 
-### Create DataFrame
-```
-val movies = Seq(("Brad Pit", "Ad Astra", "2019"), ("Brad Pit", "Fight CLub", "1999"))
-val moviesDF = movies.toDF("actor", "title", "year")
-```
 
-# Partition optimization
-All partitions become tasks within stages of execution. Because each partition can be operated on in parallel, that means that your processing jobs can be distributed evenly across all of your available Spark Executors. (Spark Executors are the JVM processes running on your Spark Workers)
-
-### Cache
-Using cache appropriately within Apache Spark allows you to be a master over your available resources. 
-
-Memory is not free, although it can be cheap, but in many cases the cost to store a DataFrame in memory is actually more expensive in the long run than going back to the source of truth dataset. If you have taken a look at the Spark UI (runs on port 4040 when spark.ui.enabled is set to true) and have determined that you can’t squeeze performance out of the system, then you are a candidate for applying caching.
-
-Mainly if the most time taken during your computations is loading data from System A or B or C (say HDFS or MySQL or Redis) and you can’t speed up anymore by scaling out. Scaling out with spark means adding more CPU cores across more RAM across more Machines. Then you can start to look at selectively caching portions of your most expensive computations.
-
-
-
-Dataset's persist and cache operators are lazy (contrary to SQL's CACHE TABLE queries) and hence after the following it won't be really cached. That leads to a pattern where people execute head or count actions to trigger caching.
 
 
 
