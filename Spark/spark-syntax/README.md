@@ -118,9 +118,9 @@ df.show(10)
 ### Print first column transposed Dataframe
 Tag: show transpose dataframe
 ```
-df.show(5, 0, false)
+df.show(5, 0, true)
 ```
-* This will show 5 rows, transpose the df, and not truncate columns
+* This will show 5 rows, transpose the df
 
 
 ### Print Schema of DataFrame
