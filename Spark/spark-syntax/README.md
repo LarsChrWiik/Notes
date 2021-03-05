@@ -553,6 +553,14 @@ df.withColumn("myCol", when($"myCol".contains("\""), lit("INVALID_FORMAT")).othe
 import org.apache.spark.sql.functions.not
 df.withColumn("myCol", when(not($"myCol".contains("\"")), lit("INVALID_FORMAT")).otherwise($"myCol")) 
 ```
+```
+df
+  .withColumn("myNewCol", 
+              when($"mycol1" > 0 && $"mycol2" > 0, lit("Both is bigger"))
+              .when($"mycol1" > 0 && $"mycol2" === 0, lit("mycol1 is bigger"))
+              .when($"mycol1" === 0 && $"mycol2" > 0, lit("mycol2 is bigger"))
+              .otherwise(lit("both is 0")))
+```
 
 ### groupby + Agg + fraction calculation
 ```
@@ -564,10 +572,6 @@ val df2 = df
   .orderBy(col("myCol1").asc)
   .withColumn("fraction", concat(lit(round(col("myCustomName1") * 100 / df2.count, 1)), lit("%")))
 ```
-
-### TODO
-* .toPandas()
-* .limit()
 
 ### Create DataFrame
 ```
@@ -694,6 +698,11 @@ asset_owner_ids = list(df_small.toPandas()['asset_owner_id'])
 cache vs persist?
 
 toDF()
+
+.toPandas()
+
+.limit()
+
 
 # Filter column based on type (Int)
 ```
