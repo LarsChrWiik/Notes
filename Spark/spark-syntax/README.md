@@ -231,6 +231,13 @@ df.select(col("age"), col("age") >= 18)
 println(df.head())
 ```
 
+### Print first column transposed Dataframe
+Tag: shaow transpose dataframe
+```
+df.show(5, 0, false)
+```
+* This will show 5 rows, transpose the df, and not truncate columns
+
 ### Alias - Rename Column 
 ```
 df.select(col("age"), (col("age") >= 18).alias("adult"))
