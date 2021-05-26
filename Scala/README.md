@@ -1,12 +1,20 @@
-# Scala-Info
+# Scala Notes
 
-### Overview
-* Scala smoothly integrates features of object-oriented and functional languages and Scala is compiled to run on the Java Virtual Machine
-* Scala is a pure object-oriented language in the sense that every value is an object. However, Scala is also a functional language. Functions are values and values are an objects, so functions are actually objects. 
-* Scala allows anonymous functions, higher-order functions, nested functions, and supports currying. 
-* Scala is statically typed but does not expect you to provide type information. 
-* Scala is compiled to Java Byte Code, which can be executed by the Java Virtual Machine. This means that Java and Scala has the same runtime environment. 
-* Scala can execute Java code. 
+### Scala overview
+* Runs on the Java Virtual Machine (**JVM**) and can execute Java code
+* Supports both **object-oriented** programming and **functional programming**
+* **Compiled language**
+* **Statically typed**, but infers the type if not provided
+* Scala is compiled to Java Byte Code
+
+### Requirements
+* Installing a Java Platform Standard Edition (Java SE)
+  * Example, install Open JDK, will include:
+    * JVM
+    * HotSpot, which is a Just-In-Time (JIT) compiler
+    * Java APIs
+    * Java Class Libraries
+* Installing Scala
 
 ### What Scala has that Java does not
 * All types are objects
@@ -17,6 +25,59 @@
 * Closures ???
 * Domain Spesific Language Support ???
 
+
+# TODO
+* Type-conversion
+* Functional programming
+  * Foreach
+  * Map
+  * Filter
+  * Reduce
+  * Flatten
+  * FlatMap
+  * Fold / FoldLeft / FoldRight
+  * Fold vs Reduce
+  * Apply
+  * Collect
+  * variance
+  * find
+* Pattern Matching
+* Types
+  * Some
+  * None
+* Trait / Sealed traits
+* Case classes
+* Expressions, types, and values
+* Algebraic Data Types
+* Sbt
+* For "<-" syntax
+* Structural recursion
+* Generics
+* Options
+* Error handling
+  * Either
+  * Try
+  * Promiss + Future
+* Parallell programming
+* Substitution
+* Dependenvy injection
+  * Constructor arguments
+  * Reader monad
+  * Interpreter pattern
+* Implicit
+* Monoid / free Monoid
+* Monad
+* Applicative / Semigroupal
+* Testing
+* Lazy vs. strict
+* Ranges
+* Higher order functions
+* Proof of contradiction pattern in Scala
+* Concurrency
+  * Future
+    * Starts running as soon as you create them.
+    * You need a thread pool (ExecutionContext) available to run futures.
+  * 
 
 
 # Scala-Syntax
