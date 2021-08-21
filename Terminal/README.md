@@ -1,4 +1,2 @@
-# Various Linux commands.
+# Linux related stuff
 
-### TODO
-* set | grep JAVA_HOME
