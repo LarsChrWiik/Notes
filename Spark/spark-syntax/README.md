@@ -441,6 +441,7 @@ df.where($"myCol".contains("www.mydomain.") && not($"myCol".contains("google")))
 
 ### Map / WithColumn When and Not
 ```
+import org.apache.spark.sql.functions.when
 df.withColumn("myCol", when($"myCol".contains("\""), lit("INVALID_FORMAT")).otherwise($"myCol")) 
 ```
 ```
@@ -462,7 +463,7 @@ import org.apache.spark.sql.functions.{col, count, avg, round, lit, concat}
 
 val df2 = df
   .groupBy("myCol1", "myCol2")
-  .agg(count("myCol3") as "myCustomName1", round(avg("myCol4"), 1) as "myCustomName2")
+  .agg(count("myCol3").alias("myCustomName1"), round(avg("myCol4"), 1) as "myCustomName2")
   .orderBy(col("myCol1").asc)
   .withColumn("fraction", concat(lit(round(col("myCustomName1") * 100 / df2.count, 1)), lit("%")))
 ```
@@ -476,6 +477,15 @@ df.join(df2, Seq(Keys.myColumnName1, Keys.myColumnName2), "outer").na.fill("0")
 val resultDf = df1
   .join(df2, df1("idCol") === df2("otherIdCol"))
 ```
+NB: This approach will result in a dataframe with columns from both dataframes (inclduding the keys we compare). We can use .drop(df2("otherIdCol")) afterwards to fix this.
+
+
+### Explode
+```scala
+import org.apache.spark.sql.functions.explode
+test.withColumn("levels", explode($"levels"))
+```
+
 
 ### Pivot Table
 ```
@@ -488,6 +498,11 @@ val df3 = df2.groupBy($"myCol1", $"myCol2")
 ```
 df.groupBy(...).agg(countDistinct(...)
 ```
+
+
+
+# eqNullSafe()
+TODO
 
 
 
