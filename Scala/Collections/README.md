@@ -15,3 +15,7 @@ This is the most important Scala collection classes:
 
 ### Traversable
 Traversable is the base trait. This trait contains the abstract function **foreach**.
+
+
+### TODO:
+meaning of "--" in collections.
