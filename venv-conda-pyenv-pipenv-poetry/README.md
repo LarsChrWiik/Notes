@@ -102,16 +102,21 @@ Conda package and environment managers are included in all versions of *Anaconda
 #### Anaconda vs. Miniconda
 **Anaconda** is a full distribution of software from PyData (includes hunderes of third party packages), while **Miniconda** is only an installer for a conda environment where the users needs to install packages themself. 
 
-#### List all conda envs
+#### List installed packages
 ```bash
-conda info --envs
+conda list
 ```
-OR
+
+#### List all conda envs
 ```bash
 conda env list
 ```
+OR
+```bash
+conda info --envs
+```
 
-#### How to activate conda env:
+#### How to activate conda env
 ```bash
 conda activate <env-name>
 ```
@@ -120,25 +125,41 @@ OR
 conda activate <path-to-env>
 ```
 
-#### How to create env with conda:
+#### How to create env with conda
 ```bash
 conda create --name <myenv>
 ```
 
-#### Create env with spesific Python version:
+#### Create env with spesific Python version
 ```bash
 conda create -n myenv3.6.7 python=3.6.7
 ```
 
-#### How to create env in a spesific location:
+#### How to create env in a spesific location
 ```bash
 conda create --prefix ./myenv python=3.8.0
 ```
 
-#### How to install packages with conda:
+#### How to install packages with conda
 This will create a env in the default location for conda on the computer.
 ```bash
 conda install -n myenv scipy=0.15.0
+```
+
+#### How conda channel
+```bash
+conda config --show channels
+```
+
+#### How to install packages from different conda channel
+```bash
+conda install -c <channel-name> <package>
+```
+
+#### How to add channel to conda permanently
+NB: Channels are added to conda globally, not only for the env.
+```bash
+conda config --add channels <channel-name>
 ```
 
 #### environment.yml
@@ -183,10 +204,13 @@ pyenv uninstall <env-name>
 Allows virtualenvwrapper commands when using pyenv environments. 
 
 
+
 ## Pipenv
 Combines `Pipfile`, pip, and virtualenv into one tool. pipenv is meant to be used when developing Python applications, not libraries. An alternative to pipenv is `poetry`.
 
 Pipfile allows us to store lock files for our dependencies to make sure we use the excact same dependencies. 
 
+
+
 ## poetry
-Poetry is a dependency management and packaging tool in Python.
+Poetry is kind of like Maven (in Java) for Python, in other words, a build management tool. With Poetry, we ca build, package and publish our application. Among others, it allows us to write lock files. It also gives insite into dependecies. 
