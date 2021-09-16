@@ -48,7 +48,7 @@ When we enter a virtualenv, the `python` command from the terminal will point to
 which python
 ```
 
-How to install packages:
+#### How to install packages:
 ```bash
 pip install <packageName>
 ```
@@ -57,22 +57,22 @@ or:
 python3 -m pip install <packageName>
 ```
 
-How to install spesific packages version:
+#### How to install spesific packages version:
 ```bash
 pip install pandas==1.3.3
 ```
 
-How to install from `requirements.txt`
+#### How to install from `requirements.txt`
 ```bash
 pip install -r requirements.txt
 ```
 
-Show installed packages:
+#### Show installed packages:
 ```bash
 pip freeze
 ```
 
-Exit virtualenv:
+#### Exit virtualenv:
 ```bash
 deactivate
 ```
@@ -99,15 +99,15 @@ Conda is also an environment manager, which allows users to run different versio
 
 Conda package and environment managers are included in all versions of *Anaconda* and *Miniconda*. 
 
-### Anaconda vs. Miniconda
+#### Anaconda vs. Miniconda
 **Anaconda** is a full distribution of software from PyData (includes hunderes of third party packages), while **Miniconda** is only an installer for a conda environment where the users needs to install packages themself. 
 
-### List installed packages
+#### List installed packages
 ```bash
 conda list
 ```
 
-### List all conda envs
+#### List all conda envs
 ```bash
 conda env list
 ```
@@ -116,7 +116,7 @@ OR
 conda info --envs
 ```
 
-### How to activate conda env
+#### How to activate conda env
 ```bash
 conda activate <env-name>
 ```
@@ -125,44 +125,44 @@ OR
 conda activate <path-to-env>
 ```
 
-### How to create env with conda
+#### How to create env with conda
 ```bash
 conda create --name <myenv>
 ```
 
-### Create env with spesific Python version
+#### Create env with spesific Python version
 ```bash
 conda create -n myenv3.6.7 python=3.6.7
 ```
 
-### How to create env in a spesific location
+#### How to create env in a spesific location
 ```bash
 conda create --prefix ./myenv python=3.8.0
 ```
 
-### How to install packages with conda
+#### How to install packages with conda
 This will create a env in the default location for conda on the computer.
 ```bash
 conda install -n myenv scipy=0.15.0
 ```
 
-### How conda channel
+#### How conda channel
 ```bash
 conda config --show channels
 ```
 
-### How to install packages from different conda channel
+#### How to install packages from different conda channel
 ```bash
 conda install -c <channel-name> <package>
 ```
 
-### How to add channel to conda permanently
+#### How to add channel to conda permanently
 NB: Channels are added to conda globally, not only for the env.
 ```bash
 conda config --add channels <channel-name>
 ```
 
-### environment.yml
+#### environment.yml
 TODO
 
 
@@ -183,17 +183,17 @@ pyenv local 3.4.0
 
 **Pyenv-virtualenv** can be used to create virtualenv with pyenv. 
 
-### List all virtualenvs
+#### List all virtualenvs
 ```bash
 pyenv virtualenvs
 ```
 
-### Activate virtualenv
+#### Activate virtualenv
 ```bash
 pyenv activate <env-name>
 ```
 
-### Remove / Delete virtualenv
+#### Remove / Delete virtualenv
 ```bash
 pyenv uninstall <env-name>
 ```
