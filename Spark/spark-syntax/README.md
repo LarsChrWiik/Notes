@@ -363,10 +363,10 @@ df2 = df.dropDuplicates("myColumn")
 ### sort / orderBy
 The *sort* and *orderBy* transformations are identical and reorders the rows. These transformations must be applied on a column class. By default, the sorting is in ascending order. Specify *asc* or *desc* at the end when needed. 
 ```
-df2 = df.sort(col("myColumn"))
+df2 = df.sort("myColumn")
 ```
 ```
-df2 = df.orderBy(col("myColumn"))
+df2 = df.orderBy("myColumn")
 ```
 ```
 df2 = df.orderBy(col("myColumn").desc)
