@@ -10,3 +10,5 @@ https://docs.python.org/3/
 - Flake8 (Linting)
 - PyLint (Linting)
 - Prospector (Linting)
+- black (formatter)
+- 
