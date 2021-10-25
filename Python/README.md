@@ -9,3 +9,4 @@ https://docs.python.org/3/
 - module and relative path. Never execute a file with a relative path. files with relative paths should be part for a module and not be executed. 
 - Flake8 (Linting)
 - PyLint (Linting)
+- Prospector (Linting)
