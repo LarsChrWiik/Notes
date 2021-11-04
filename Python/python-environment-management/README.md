@@ -193,6 +193,11 @@ pyenv versions | grep -P "^  [0-9.]+$" | sort | uniq
 pyenv install --list
 ```
 
+### Install spesific Python version
+```bash
+pyenv install 3.8.7
+```
+
 ### Create virtualenv
 ```bash
 pyenv virtualenv 3.6.8 my-virtual-env-3.6.8
