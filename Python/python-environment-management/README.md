@@ -183,7 +183,22 @@ pyenv local 3.4.0
 
 **Pyenv-virtualenv** can be used to create virtualenv with pyenv. 
 
-#### List all virtualenvs
+### List installed Python versions
+```bash
+pyenv versions | grep -P "^  [0-9.]+$" | sort | uniq
+```
+
+### List available Python versions
+```bash
+pyenv install --list
+```
+
+### Create virtualenv
+```bash
+pyenv virtualenv 3.6.8 my-virtual-env-3.6.8
+```
+
+### List your virtualenvs
 ```bash
 pyenv virtualenvs
 ```
