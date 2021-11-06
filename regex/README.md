@@ -18,7 +18,7 @@ There are usually a button (**.\***) indicating to allow regex mattern matching.
 * \n = new line
 * \s = whitespace (space, \t, \r, \n)
 * \S = non-whitespace
-* X* = 0 or more repetitions of X
+* X* = 0 or more repetitions of X (this will allow non-matching!)
 * X+ = 1 or more repetitions of X
 * X? = 0 or 1 instance of X
 * X{m} = exactly *m* instances of X
