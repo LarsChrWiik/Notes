@@ -117,6 +117,25 @@ y = tf.matmul(a, x) + b
 print(y.numpy())
 ```
 
+
+### Eager evaliation with Tensorflow 2.0
+* TF 1.0 used lazy evaluation, but in Tensorflow 2.0, eager execution is enabled by default - making debugging easier
+* Eager execution is an environment that evaluates operations immediately **without building graphs**
+* Eager execution allow users to see numbers instead of graphs
+* Eager evaluation works great with numpy
+* Reduces boilerplate code
+* Introduces natural control flow, instead of graph control flow
+* Simplifies prototyping
+
+Note that eager execution is **slower than graph execution**. However, trained models are saved as graphs no matter which execution option you choose.
+
+```python
+tf.enable_eager_execution()
+tf.executing_eagerly()
+print(...)
+```
+
+
 ## tf.function
 **tf.function** converts normal Python code into Tensorflow graph code using the **@tf.function** decorator. Example:
 ```python
@@ -130,5 +149,5 @@ Side effects of using tf.function:
 * print() works only once. Use tf.print() instead.
 
 
-### Eager evaliation with Tensorflow 2.0
-Tensorflow 2.0 introduced "eager evaluation" making debugging easier.
+
+
