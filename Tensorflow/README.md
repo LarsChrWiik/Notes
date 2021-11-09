@@ -84,8 +84,6 @@ a = tf.zeros(int(1000000000000), int(1000000000000))
 
 The distinction between declaration and allocation allows Tensorflow to distributde the workload on different machines.
 
-### Keras and Estimator
-**tf.keras** was originally meant for small-scale models in TF v1.0. **Estimator** was also introduced by Tensorflow, and designed for scaling ML training. Estimator was segined for TF 1.0 and required sessions. Tensorflow 2.0 combines the power of simple Keras syntax and the power of estimators in **tf.keras**.
 
 ## New in 2.0
 * InteractiveSession is not needed
@@ -93,6 +91,8 @@ The distinction between declaration and allocation allows Tensorflow to distribu
 * Variable initialization is not needed
 * Variable sharing via scopes is not needed
 * Lifetime of state objects is determined by the lifetime of their corresponding Python object, not the session object
+* Less reduntant code (trying to make it a preferred way of adding opimizers, metrics, losses, layers, etc)
+* Better documentation
 
 ### Comparing Tensorflow 1.0 to 2.0 syntax
 TF 1.0
@@ -117,7 +117,6 @@ y = tf.matmul(a, x) + b
 print(y.numpy())
 ```
 
-
 ### Eager evaliation with Tensorflow 2.0
 * TF 1.0 used lazy evaluation, but in Tensorflow 2.0, eager execution is enabled by default - making debugging easier
 * Eager execution is an environment that evaluates operations immediately **without building graphs**
@@ -135,6 +134,9 @@ tf.executing_eagerly()
 print(...)
 ```
 
+### Keras and Estimator
+**tf.keras** was originally meant for small-scale models in TF v1.0. **Estimator** was also introduced by Tensorflow, and designed for scaling ML training. Estimator was segined for TF 1.0 and required sessions. Tensorflow 2.0 combines the power of simple Keras syntax and the power of estimators in **tf.keras**.
+
 
 ## tf.function
 **tf.function** converts normal Python code into Tensorflow graph code using the **@tf.function** decorator. Example:
@@ -148,6 +150,45 @@ def my_tf_function(x):
 Side effects of using tf.function:
 * print() works only once. Use tf.print() instead.
 
+## Tensroflow with Databricks
+Tensorflow can be used with Databricks by adding the Tensorflow library to the Databricks cluster.
+
+## Tensorflow high level API (Keras)
+Keras in an API standard and an independent project [Keras.io](https://www.keras.io), and is included in Tensorflow through the **tf.keras** module.
+
+Key points about Keras in general:
+* High-level API
+* User friendly
+* Modular and composable
+* For beginners and experts!
+
+The Keras API has implementations for TensorFlow, MXNet, TypeScript, JavaScript, CNTK, Theano, PlaidML, Scala, CoreML, and more...
+
+The version of Keras in Tensorflow adds additional functionallity:
+* Support for tf.data, which is good for scaling your project (but it also supports numpy and Pandas)
+* Supports distributed training
+* Exporting models (serialized in Tensorflow SavedModel format)
+* Allow models in Tenorflow Lite for mobile devices
+* Supports *tf.feature_columns*
 
 
 
+
+
+```python
+from tensorflow import keras
+
+model = keras.Sequential([
+    keras.layers.Flatten(input_shape=(784,)),
+    keras.layers.Dense(128, activation=tf.nn.relu),
+    keras.layers.Dense(10, activation=tf.nn.softmax)
+])
+```
+
+## Supervised Learning with TensorFlow
+
+
+## TensorFlow Datasets and Estimators
+
+
+## tf.distribute.DistributedDataset
