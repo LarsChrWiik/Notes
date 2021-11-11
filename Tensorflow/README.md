@@ -25,6 +25,8 @@ A tensor has a shape inducating the number of values in each dimension:
 * The shape of vector “[5,6,7]” is 3
 * The shape of matrix “[[6,7,5,6,7],[4,6,7,9,8]]” is [5, 2]
 
+**In Tensorflow 2, a tensor can "mentally" be replaced with a Numpy ndarray**.
+
 ### Flow - Graph
 “Flow” in Tensorflow refers to the underlying graph computation framework that uses tensors for its execution. TensorFlow uses directed acyclic graphs internally to represent computations, which is called **computational graphs** or **data flow graphs**.
 * Computations are hierarchical
@@ -86,6 +88,7 @@ The distinction between declaration and allocation allows Tensorflow to distribu
 
 
 ## New in 2.0
+* Distributed training vs. single node training uses the same code!
 * InteractiveSession is not needed
 * graph definition is not needed
 * Variable initialization is not needed
@@ -134,12 +137,16 @@ tf.executing_eagerly()
 print(...)
 ```
 
-### Keras and Estimator
-**tf.keras** was originally meant for small-scale models in TF v1.0. **Estimator** was also introduced by Tensorflow, and designed for scaling ML training. Estimator was segined for TF 1.0 and required sessions. Tensorflow 2.0 combines the power of simple Keras syntax and the power of estimators in **tf.keras**.
+### Estimator and Keras
+**Estimator** was the go-to high-level API of Tensorflow 1. In Tensorflow 2, **Keras** is the preferred high-level API. **tf.keras** was originally meant for small-scale models in Tensorflow 1, while **Estimator** was designed for scaling ML training in Tensorflow. Estimator was designed spesifcally for Tensorflow 1 and required sessions. Tensorflow 2.0 combines the power of the simple Keras syntax and the power of estimators in **tf.keras**.
 
 
 ## tf.function
-**tf.function** converts normal Python code into Tensorflow graph code using the **@tf.function** decorator. Example:
+**tf.function** converts normal Python code into Tensorflow graph code using the **@tf.function** decorator. This will compile the code to **C++**, meaning that the next time you run the function, it will run much faster!
+
+If you need performance, use **tf.function**!
+
+Example:
 ```python
 @tf.function
 def my_tf_function(x):
@@ -150,40 +157,46 @@ def my_tf_function(x):
 Side effects of using tf.function:
 * print() works only once. Use tf.print() instead.
 
-## Tensroflow with Databricks
-Tensorflow can be used with Databricks by adding the Tensorflow library to the Databricks cluster.
 
-## Tensorflow high level API (Keras)
-Keras in an API standard and an independent project [Keras.io](https://www.keras.io), and is included in Tensorflow through the **tf.keras** module.
+## Distibuted programming in Tensorflow 2
+Tensorflow allows the user to spesify a distributed programming strategy using the **tf.distribute.Strategy** module. 
 
-Key points about Keras in general:
-* High-level API
-* User friendly
-* Modular and composable
-* For beginners and experts!
+However, **Model.fit** in keras is built in distributed.
 
-The Keras API has implementations for TensorFlow, MXNet, TypeScript, JavaScript, CNTK, Theano, PlaidML, Scala, CoreML, and more...
+Some questions we need to ask ourself before when we are distributing work load:
+* Are tasks independent or de they need synchronization?
+* Do we have any global variables for all workers?
 
-The version of Keras in Tensorflow adds additional functionallity:
-* Support for tf.data, which is good for scaling your project (but it also supports numpy and Pandas)
-* Supports distributed training
-* Exporting models (serialized in Tensorflow SavedModel format)
-* Allow models in Tenorflow Lite for mobile devices
-* Supports *tf.feature_columns*
+All we need to do to run our single node code distributed is to wrap it in a **strategy scope**.
 
+There are different types of strategies:
+* **Synchronous**: all workers train over different slices of input data in sync.
+    * MirroredStrategy
+* **Asynchronous**: all workers are independently training over the input data and updating variables asynchronously.
+* **Hardware platform**: Use multiple GPUs on a single machine.
 
-
-
+**tf.distribute.MirroredStrategy** supports synchronous distributed training on multiple GPUs on one machine.
 
 ```python
-from tensorflow import keras
-
-model = keras.Sequential([
-    keras.layers.Flatten(input_shape=(784,)),
-    keras.layers.Dense(128, activation=tf.nn.relu),
-    keras.layers.Dense(10, activation=tf.nn.softmax)
-])
+strategy = tf.distributed.MirroredStrategy()
+with strategy.scope():
+    # Input the same code as for single node
+    ...
 ```
+
+## Tensorflow with Databricks
+Tensorflow can be used with Databricks by adding the Tensorflow library to the Databricks cluster.
+
+
+## tf.data
+```python
+tf.data.Dataset.from_tensor_slices(my_inputs, my_labels).shuffle().batch(32)
+```
+
+
+## Tensorflow low level API
+TODO
+
 
 ## Supervised Learning with TensorFlow
 
