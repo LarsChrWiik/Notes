@@ -1,5 +1,5 @@
 # Keras - The high-level API in Tensorflow
-**Keras** is the go-to high-level API for Tensorflow 2.
+**Keras** is the official high-level API for Tensorflow 2.0.
 
 Keras in an API standard and an independent project [Keras.io](https://www.keras.io), and is included in Tensorflow through the **tf.keras** module.
 
