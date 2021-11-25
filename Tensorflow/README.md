@@ -199,9 +199,23 @@ TODO
 
 
 ## Supervised Learning with TensorFlow
-
+TODO
 
 ## TensorFlow Datasets and Estimators
+TODO
 
 
 ## tf.distribute.DistributedDataset
+TODO
+
+
+## Text classification with tensorflow
+```python
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+```
+
+
+## Boosted Tree Classifier
+```python
+from tensorflow.estimator import BoostedTreesClassifier
+```
