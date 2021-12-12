@@ -197,6 +197,12 @@ pyenv install --list
 ```bash
 pyenv install 3.8.7
 ```
+For issues with installing Python version 3.6 and below:
+```bash
+$ brew install bzip2 lbzip2 lzlib openssl zlib
+
+$ LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib" CFLAGS="-I/usr/local/opt/bzip2/include -I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include -I$(xcrun --show-sdk-path)/usr/include -Wno-implicit-function-declaration" pyenv install 3.6.15
+```
 
 ### Create virtualenv
 ```bash
@@ -226,11 +232,100 @@ Allows virtualenvwrapper commands when using pyenv environments.
 
 
 ## Pipenv
-Combines `Pipfile`, pip, and virtualenv into one tool. pipenv is meant to be used when developing Python applications, not libraries. An alternative to pipenv is `poetry`.
+Combines `Pipfile`, pip, and virtualenv into one tool.
 
-Pipfile allows us to store lock files for our dependencies to make sure we use the excact same dependencies. 
+Pipenv replaces traditional `requirements.txt` file with a new dependency file called `Pipfile`.
+
+Features include:
+* Enables truly deterministic builds by using `dependency locking`
+* Automatically creates a `virtualenv` in a standard location
+* Automatically finds your project home, recursively, by looking for a Pipfile
+* Automatically adds/removes packages to a Pipfile
+* Automatically loads .env files, if they exist
+
+Pipenv is meant to be used when developing and deploying Python `applications`, `not libraries`. This is beacuse libraries might want to support multiple Python versions with different dependency version. 
+
+An alternative to pipenv is `poetry`.
+
+
+#### Pipenv virtualenv path
+```
+~/.local/share/virtualenvs/<env-name>
+```
+
+#### Activate pipenv environment
+```bash
+pipenv shell
+```
+
+#### Exit pipenv environemnt
+```bash
+exit
+```
+
+#### Install from Pipfile
+Make sure that pip is up to date before fetching.
+```bash
+pipenv install
+```
+For adding dev dependencies as well:
+```bash
+pipenv install --dev
+```
+
+#### Install from requirements.txt
+```bash
+pipenv install -r ./requirements.txt
+```
+
+#### Install package
+```bash
+pipenv install <packageName>
+```
+```bash
+pipenv install "requests>=1.4" # will install a version equal or larger than 1.4.0
+```
+* The use of double quotes around the package and version specification is highly recommended to avoid issues with input and output redirection in Unix-based operating systems.
+* The use of ~= is preferred over the == identifier as the latter prevents pipenv from updating the packages
+    * Altough this will make builds non-deterministic and might fail if the developers of the libraries breaks backwards compatability
+
+#### Install from URL
+```bash
+pipenv install -e <packageName>
+```
+
+#### Uninstall package
+```bash
+pipenv uninstall <packageName>
+```
+
+#### Create lock file "Pipfile.lock"
+```bash
+pipenv lock
+```
+* Pipfile.lock will be generated with the sha256 hashes of each downloaded package
+
+#### Create requirements.txt with hashes
+```bash
+pipenv lock -r
+```
+
+#### Display graph / tree of dependencies
+```bash
+pipenv graph
+```
+
+#### Pipenv run
+To run commands within the virtualenv from outputside the virtualenv
+```bash
+pipenv run pip freeze
+```
+
+#### Check security warnings
+```
+```
 
 
 
 ## poetry
-Poetry is kind of like Maven (in Java) for Python, in other words, a build management tool. With Poetry, we ca build, package and publish our application. Among others, it allows us to write lock files. It also gives insite into dependecies. 
+Poetry is kind of like Maven (in Java) for Python, in other words, a build management tool. With Poetry, we can build, package, and publish our application. Among others, it allows us to write lock files. It also gives insight into dependecies.
