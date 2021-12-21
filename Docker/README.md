@@ -53,7 +53,11 @@ WORKDIR <set-working-directory>
 
 ### Build Image using a Dockerfile
 ```
-docker build -t \<package\>:\<new-image-name\> \<location-of-dockerfile\>
+docker build . -t name:tag
+```
+Example:
+```
+docker build . -t ubuntu:latest
 ```
 
 ### Download Image from Docker hub
