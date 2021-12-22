@@ -82,7 +82,7 @@ docker images
 
 ### Stop container
 ```bash
-docker stop \<container-name\>
+docker stop myContainer
 ```
 
 ### Stop all containers
@@ -92,24 +92,24 @@ docker stop $(docker ps -q)
 
 ### Start a stopped container
 ```bash
-docker start \<container-id-or-name\>
+docker start myContainerIdOrName
 ```
 
 ### Run Docker Image
 *Non-interactive mode*
 ```bash
-docker run \<image-name\>
+docker run myImageName
 ```
 
 *Interactive mode*
 ```bash
-docker run -it \<image-name\>
+docker run -it myImageName
 ```
 * *NB: windows require "winpty" before the command to run in interactive mode*
 
 *Interactive mode as Daemon*
 ```bash
-docker run -it -d \<image-name\>
+docker run -it -d myImageName
 ```
 
 *Interactive mode + run command in running container*
@@ -121,7 +121,7 @@ docker exec -it jupyter-notebook bash
 
 ### Remove container
 ```bash
-docker rm \<container-name-or-id\>
+docker rm myContainerIdOrName
 ```
 
 ### Remove all containers
@@ -131,11 +131,11 @@ docker rm $(docker ps -a -q)
 
 ### Remove Image
 ```bash
-docker rmi \<image-name-og-id\>
+docker rmi myImageIdOrName
 ```
 Or use the command:
 ```bash
-docker image rm \<image-name-og-id\>
+docker image rm myImageIdOrName
 ```
 
 ### Remove all Images
@@ -161,6 +161,6 @@ docker logs
 ### Create a new Image from a modified container
 *NB: image name must be lowercase*
 ```bash
-docker commit \<container-name\> \<image-name\>
+docker commit myContainerName myImageName
 ```
 
