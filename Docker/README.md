@@ -107,7 +107,7 @@ docker run -it myImageName
 ```
 * *NB: windows require "winpty" before the command to run in interactive mode*
 
-*Interactive mode as Daemon*
+*Interactive mode + detach*
 ```bash
 docker run -it -d myImageName
 ```
