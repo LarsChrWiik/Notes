@@ -62,7 +62,7 @@ docker build . -t myImageName:latest
 
 ### Download Image from Docker hub
 ```bash
-docker pull <docker-image-from-docker-hub>:<version>
+docker pull myDockerImageFromDockerHub:latest
 ```
 
 ### List all running containers
