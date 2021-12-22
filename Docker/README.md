@@ -52,115 +52,115 @@ WORKDIR <set-working-directory>
 # Commands in Docker
 
 ### Build Image using a Dockerfile
-```
+```bash
 docker build . -t name:tag
 ```
 Example:
-```
+```bash
 docker build . -t myImageName:latest
 ```
 
 ### Download Image from Docker hub
-```
-docker pull \<docker-image-from-docker-hub\>:\<version\>
+```bash
+docker pull <docker-image-from-docker-hub>:<version>
 ```
 
 ### List all running containers
-```
+```bash
 docker ps
 ```
 
 ### List all running and stopped containers
-```
+```bash
 docker ps -a
 ```
 
 ### List all Images
-```
+```bash
 docker images
 ```
 
 ### Stop container
-```
+```bash
 docker stop \<container-name\>
 ```
 
 ### Stop all containers
-```
+```bash
 docker stop $(docker ps -q)
 ```
 
 ### Start a stopped container
-```
+```bash
 docker start \<container-id-or-name\>
 ```
 
 ### Run Docker Image
 *Non-interactive mode*
-```
+```bash
 docker run \<image-name\>
 ```
 
 *Interactive mode*
-```
+```bash
 docker run -it \<image-name\>
 ```
 * *NB: windows require "winpty" before the command to run in interactive mode*
 
 *Interactive mode as Daemon*
-```
+```bash
 docker run -it -d \<image-name\>
 ```
 
 *Interactive mode + run command in running container*
 
 Example of running the "bash" command in a running comtainer:
-```
+```bash
 docker exec -it jupyter-notebook bash
 ```
 
 ### Remove container
-```
+```bash
 docker rm \<container-name-or-id\>
 ```
 
 ### Remove all containers
-```
+```bash
 docker rm $(docker ps -a -q)
 ```
 
 ### Remove Image
-```
+```bash
 docker rmi \<image-name-og-id\>
 ```
 Or use the command:
-```
+```bash
 docker image rm \<image-name-og-id\>
 ```
 
 ### Remove all Images
-```
+```bash
 docker rmi $(docker images -q)
 ```
 
 ### Run docker-compose file
-```
+```bash
 docker-compose up -d
 ```
 
 ### Copy file into docker container
-```
+```bash
 * docker cp foo.txt mycontainer:/foo.txt
 ```
 
 ### Get logs from container
-```
+```bash
 docker logs
 ```
 
 ### Create a new Image from a modified container
 *NB: image name must be lowercase*
-```
+```bash
 docker commit \<container-name\> \<image-name\>
 ```
 
