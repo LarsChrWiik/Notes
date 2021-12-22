@@ -57,7 +57,7 @@ docker build . -t name:tag
 ```
 Example:
 ```
-docker build . -t ubuntu:latest
+docker build . -t myImageName:latest
 ```
 
 ### Download Image from Docker hub
