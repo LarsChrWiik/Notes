@@ -71,28 +71,28 @@ docker pull myDockerImageFromDockerHub:latest
 
 ## List
 
-### List all running containers
+#### List all running containers
 ```bash
 docker ps
 ```
 
-### List all running and stopped containers
+#### List all running and stopped containers
 ```bash
 docker ps -a
 ```
 
-### List all Images
+#### List all Images
 ```bash
 docker images
 ```
 
 ## Stop 
-### Stop container
+#### Stop container
 ```bash
 docker stop myContainer
 ```
 
-### Stop all containers
+#### Stop all containers
 ```bash
 docker stop $(docker ps -q)
 ```
@@ -100,12 +100,12 @@ docker stop $(docker ps -q)
 
 ## Start
 
-### Start a stopped container
+#### Start a stopped container
 ```bash
 docker start myContainerIdOrName
 ```
 
-### Run Docker Image
+#### Run Docker Image
 *Non-interactive mode*
 ```bash
 docker run myImageName
@@ -129,7 +129,7 @@ Example of running the "bash" command in a running comtainer:
 docker exec -it jupyter-notebook bash
 ```
 
-### Run docker-compose file
+#### Run docker-compose file
 ```bash
 docker-compose up -d
 ```
@@ -137,22 +137,22 @@ docker-compose up -d
 
 ## Remove
 
-### Remove container
+#### Remove container
 ```bash
 docker rm myContainerIdOrName
 ```
 
-### Remove all containers
+#### Remove all containers
 ```bash
 docker rm $(docker ps -a -q)
 ```
 
-### Remove all stopped containers
+#### Remove all stopped containers
 ```bash
 docker container prune
 ```
 
-### Remove Image
+#### Remove Image
 ```bash
 docker rmi myImageIdOrName
 ```
@@ -161,7 +161,7 @@ Or use the command:
 docker image rm myImageIdOrName
 ```
 
-### Remove all Images
+#### Remove all Images
 ```bash
 docker rmi $(docker images -q)
 ```
@@ -169,17 +169,17 @@ docker rmi $(docker images -q)
 
 ## Other
 
-### Copy file into docker container
+#### Copy file into docker container
 ```bash
 * docker cp foo.txt mycontainer:/foo.txt
 ```
 
-### Get logs from container
+#### Get logs from container
 ```bash
 docker logs
 ```
 
-### Create a new Image from a modified container
+#### Create a new Image from a modified container
 *NB: image name must be lowercase*
 ```bash
 docker commit myContainerName myImageName
