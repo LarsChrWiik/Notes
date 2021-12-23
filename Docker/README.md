@@ -51,6 +51,9 @@ WORKDIR <set-working-directory>
 
 # Commands in Docker
 
+
+## Create / Get
+
 ### Build Image using a Dockerfile
 ```bash
 docker build . -t name:tag
@@ -64,6 +67,9 @@ docker build . -t myImageName:latest
 ```bash
 docker pull myDockerImageFromDockerHub:latest
 ```
+
+
+## List
 
 ### List all running containers
 ```bash
@@ -80,6 +86,7 @@ docker ps -a
 docker images
 ```
 
+## Stop 
 ### Stop container
 ```bash
 docker stop myContainer
@@ -89,6 +96,9 @@ docker stop myContainer
 ```bash
 docker stop $(docker ps -q)
 ```
+
+
+## Start
 
 ### Start a stopped container
 ```bash
@@ -119,6 +129,14 @@ Example of running the "bash" command in a running comtainer:
 docker exec -it jupyter-notebook bash
 ```
 
+### Run docker-compose file
+```bash
+docker-compose up -d
+```
+
+
+## Remove
+
 ### Remove container
 ```bash
 docker rm myContainerIdOrName
@@ -127,6 +145,11 @@ docker rm myContainerIdOrName
 ### Remove all containers
 ```bash
 docker rm $(docker ps -a -q)
+```
+
+### Remove all stopped containers
+```bash
+docker container prune
 ```
 
 ### Remove Image
@@ -143,10 +166,8 @@ docker image rm myImageIdOrName
 docker rmi $(docker images -q)
 ```
 
-### Run docker-compose file
-```bash
-docker-compose up -d
-```
+
+## Other
 
 ### Copy file into docker container
 ```bash
