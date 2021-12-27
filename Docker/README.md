@@ -65,6 +65,7 @@ docker build . -t myImageName:latest
 ```bash
 docker build . -t myImageName:latest --build-arg myEnvVariable=value
 ```
+* To force re-build with no cache, then use "--no-cache"
 
 ### Download Image from Docker hub
 ```bash
