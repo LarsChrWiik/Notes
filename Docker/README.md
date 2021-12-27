@@ -62,6 +62,9 @@ Example:
 ```bash
 docker build . -t myImageName:latest
 ```
+```bash
+docker build . -t myImageName:latest --build-arg myEnvVariable=value
+```
 
 ### Download Image from Docker hub
 ```bash
