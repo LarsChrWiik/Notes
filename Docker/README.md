@@ -129,6 +129,19 @@ Example of running the "bash" command in a running comtainer:
 docker exec -it jupyter-notebook bash
 ```
 
+#### Run with environment variable
+```bash
+docker run -e API_KEY="secret" myImageName
+```
+
+#### Run with environment variable
+```bash
+docker run -e API_KEY="secret" myImageName
+```
+```bash
+docker run --env-file ./.env myImageName
+```
+
 #### Run docker-compose file
 ```bash
 docker-compose up -d
