@@ -321,8 +321,9 @@ To run commands within the virtualenv from outputside the virtualenv
 pipenv run pip freeze
 ```
 
-#### Check security warnings
+#### Remove pipenv venv
 ```
+pipenv --rm
 ```
 
 
