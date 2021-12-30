@@ -69,3 +69,11 @@ git checkout <branch>
 git rebase 
 ```
 
+### Remove commits in Pull Request
+```
+$ git checkout my-branch
+$ git log  # find the commit to revert to
+$ git rebase -i commit-hash. # interactive rebase
+# Replace "pick" with "drop" for commits to remove
+$ git push origin my-branch --force
+```
