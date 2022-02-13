@@ -5,6 +5,13 @@ The ultimate goal of the Lean Startup principle is to:
 ```Improve the success rate of new innovative products worldwide```
 
 
+## Summary
+* Create a vision for the product and hypotheses about how customers will interact with the product
+* Build an MVP and test if the hypotheses is true or false
+* Create metrics for users by placing then in chohorts and check how features change user behaviour
+* Given the results, have a decision to pivot or perserve
+
+
 ### Entrepreneurs
 * Embrace new thinking
 * Keeps focusing on distribution and innovation through uncertain times
@@ -269,7 +276,12 @@ Types of Pivot:
 * **Zoom-out Pivot**: Pivot that extends the current product with additional features.
 * **Customer Segment Pivot**: Pivot to a different customer group than we thought needed the product. This means that the original product is a good product, but was designed for a different type of customer.
 * **Customer Need Pivot**: Pivot to solve another customer need than the original product.
-* **Platform Pivot**: Pivot from an application to a platform.
+* **Platform Pivot**: Pivot from the original solution / application to a platform where the application can be used by third-parties.
+* **Business Architecture Pivot**: Changing that business group, example, from B2C (low margin, high volume) to B2B (high margin, low volume).
+* **Value Capture Pivot**: Fundamentally change how the product produce value to customers.
+* **Channel Pivot**: Change the way the product is handed to the customer. For exmaple, move to "direct sale to comsumers".
+* **Technology Pivot**: Pivot the technology of the product, to make it better or more appealing.
+
 
 
 
