@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Actions with HTML and JavaScript</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1 id="myHeading">Actions with HTML and JavaScript<h1>
+  </div>
+  <div class="container">
+    <!-- A button that is linked to a function -->
+    <div>
+      <button onClick="onClickThisIsAButton()">This is a button</button>
+    </div>
+    <dib>
+      <button onClick="this.innerHTML = 'another name'">change name of button</button>
+    </div>
+    <dib>
+      <button onClick="changeHeading()">Change header</button>
+    </div>
+  </div>
+</body>
+
+<script>
+  function onClickThisIsAButton() {
+    alert("You clicked")
+  }
+
+  function changeHeading() {
+    var headingID = document.getElementById("myHeading")
+    headingID.innerHTML = "Another Heading"
+  }
+</script>
+
+</html>

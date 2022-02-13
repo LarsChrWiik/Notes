@@ -1,0 +1,17 @@
+
+body{
+  text-align: center;
+  font-family: "Courier New";
+  font-size: 18px;
+}
+
+.header{
+  background: #f4f4f4;
+  border-bottom: #ccc 3px solid;
+  padding: 20px;
+}
+
+.contianer{
+  width:700px;
+  margin:30px auto;
+}
