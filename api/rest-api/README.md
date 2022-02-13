@@ -1,7 +1,4 @@
 
-# TODO
-Move?
-
 # REST API
 REST API (also called RESTful API) is an Application Programming Interface (API) using the Representational State Transfer (REST) style.
 
@@ -16,18 +13,18 @@ Information is transfered over HTTP with a given data representation, which can 
 
 **JSON** is most popular data representation to use since it is language-agnostic as well as easily human readable.
 
-### API 
+### API
 An Application Programming Interface (API) is used to allow different systems to communicate together. When two systems communicate, one system is the **client** that makes a request, while the other system is the **server** that recieves the request and returns the response.
 
 ### Headers and Parameters
 Headers and parameters are important in the HTTP methods of a RESTful API HTTP request. They can contain imporant identifier information such as:
 
 ### URL Parameters (query string)
-URL parameters are basicly variables the user can provide what will be used within the server. The parameters/varaibles can for example be used to filter content for the website. 
+URL parameters are basicly variables the user can provide what will be used within the server. The parameters/varaibles can for example be used to filter content for the website.
 
 URL parameters start with "**?**" followed by a "**variable=value**" and then followed by "**&variable=value**" for as many variables we wish to add.
 
-We also have *path* parameter**: 
+We also have *path* parameter**:
 ```
 https://www.facebook.com/bob.hansen
 ```
@@ -55,7 +52,7 @@ examplewebsite.com/search?q=christmas
 #### URL Parameters best practices
 * Adding a **canonical tag** that points to the non-parameter version.
 * For URLs where content changes based on prameters, make sure we wish these pages to be ranked uniquely.
-* Use hreflang annotation instead of language parameters. 
+* Use hreflang annotation instead of language parameters.
 
 ### Pagination
 Pagination can be used for webistes to limit data transfor between server and client when the client. Basically, the clinet revies a certain page from the server that is displayed, and if the client wishes to display the next page, another call to the server must be made. The response from the server contains the number of pages, so if a developer wishes to loop over all pages, he first needs to make an initial call to get the "max_page" nuber.
