@@ -6,13 +6,38 @@ NPM consist of two components:
 * A **commandline tool** using for setting up projects and installing additional dependencies.
 * An **online database** that contains public and paid-for packages (called NPM registry).
 
-
 ### npm init
 Creates **package.json**.
 ```bash
 npm init
 ```
 
+### npm versions
+Shows various versions that is used in the project, such as the Node version:
+```bash
+npm version
+
+# res:
+{
+  myApp: '0.1.0',
+  npm: '7.24.2',
+  node: '14.18.2',
+  v8: '8.4.371.23-node.85',
+  uv: '1.42.0',
+  zlib: '1.2.11',
+  brotli: '1.0.9',
+  ares: '1.18.1',
+  modules: '83',
+  nghttp2: '1.42.0',
+  napi: '8',
+  llhttp: '2.1.4',
+  openssl: '1.1.1l',
+  cldr: '39.0',
+  icu: '69.1',
+  tz: '2021a',
+  unicode: '13.0'
+}
+```
 
 ### npm install
 Update/Create the **package-lock.json** and **node_modules**.
@@ -38,6 +63,43 @@ Install all exact version dependencies from a **package-lock.json** file.
 npm ci
 ```
 * Does not writes to package.json or package-lock.json.
+
+
+# NVM
+NVM (Node Version Manager) is used to install and use different versions of **node.js**. It is designed to be used on a per-user basis and used through the shell.
+
+### nvm install
+Install latest version of Node.
+```bash
+nvm install node
+```
+
+Install spesific version of Node.
+```bash
+nvm install 16
+```
+
+### List node versions
+```bash
+nvm ls-remote
+```
+
+### nvm use
+```bash
+nvm use 16
+# res: Now using node v16.9.1 (npm v7.21.1)
+```
+
+
+# NPX
+npx (npm package runner). X = eXecute.
+
+npx can be used when we want only need to download a package for a short amount of time, either for testing purposes or because we only need to run the package once.
+
+An example of usage is when we want to create a React app. We only need to use the package "create-react-app" once:
+```bash
+npx create-react-app .
+```
 
 
 # Yarn

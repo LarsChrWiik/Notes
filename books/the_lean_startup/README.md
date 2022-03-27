@@ -5,20 +5,51 @@ The ultimate goal of the Lean Startup principle is to:
 ```Improve the success rate of new innovative products worldwide```
 
 
-## Summary
-* Create a vision for the product and hypotheses about how customers will interact with the product
-* Build an MVP and test if the hypotheses is true or false
-* Create metrics for users by placing then in chohorts and check how features change user behaviour
-* Given the results, have a decision to pivot or perserve
+# Summary
+The main idea of the learn startup method is to `Systematically figure out the right thing to build.`.
+
+The main question is not `Can this product be built?` but rather `Should this product be built?` and `Can we build a sustainable business around this product or service?`.
+
+Summary checklist for your startup:
+* Have a good idea
+* Create a clear strategy and vision for the product
+* Break the vision down into the **Value hypothesis** and the **Growth hypothesis**.
+* Validate the idea through market research
+* Esablish clear hypotheses about how customers will interact with the product
+* Have a clear idea of what a *normal* customer looks like
+* Build an MVP (make it simple!)
+* Validate if the vision is true
+* Target early adopters
+* Sell to customers before the product is ready
+* Create metrics for users by placing them in chohorts
+* Continually create new hypotheses and apply the **build-measure-learn** technique to achieve **validated-learning** by measuring customer behaviour changes that correlates with product changes
+* Use customers for testing and experimentation
+* Continually evaluate whether to **pivot or perserve** when the results from the build-measure-learn cicle completes
+* Hold innovators accountable for their outcomes (**innovation accounting**)
+* At some point, we may need to pivot to target mainstream consumers instead of early adopters
 
 
-### Entrepreneurs
+### Entrepreneurs Characteristics
 * Embrace new thinking
 * Keeps focusing on distribution and innovation through uncertain times
 * Disregardd boundaries
 * Are enthusiastic
 * Dares the world to stop them
 * Assemble great people
+
+
+### Vision, Strategy, Product
+A vision does not change.
+
+A strategy is:
+* the business model
+* product roadmap
+* knowing the competitors
+* knowing who the customers are.
+
+We can **Pivot** the strategy if we encounter setbacks.
+
+The product is the end result of the strategy. And the product can be optimized or chnged if we encounter setbacks.
 
 
 ### Minimum need for a startup
@@ -34,20 +65,6 @@ The ultimate goal of the Lean Startup principle is to:
 * Use customers for testing and experimentation
 * View customer feedback as a single source of information and not the truth and assess if the feedback alines with the overall vision
 * Remove the enormous waste in product development cycle
-
-
-### Vision, Strategy, Product
-A vision does not change.
-
-A strategy is:
-* the business model
-* product roadmap
-* knowing the competitors
-* knowing who the customers are.
-
-We can **Pivot** the strategy if we encounter setbacks.
-
-The product is the end result of the strategy. And the product can be optimized or chnged if we encounter setbacks.
 
 
 ### The Lean Startup Method
@@ -75,7 +92,7 @@ Even if customers says they do no what a product, it does not mean that the prod
 
 
 ### Validated learning
-All effort that does not pointed to figuring out what the customer wants should be eliminated. What we learn should also be relevant.
+All effort that does not try to figure out what the customer wants should be eliminated. What we learn should also be relevant.
 
 It is way too easy to kid yourself on what the customer wants. And proceeding a false assumption is a massive waste.
 
@@ -85,11 +102,11 @@ Systematically figure out the right thing to build.
 
 
 ### Basic tactics
-* Launch a alow-quality early prototype
+* Launch a low-quality early prototype
 * Charge customers from day one
 * Use low-volume revenue targets as a way to drive accountability
 
-But, its not like this all the time. Not all cutomers agree to pay for a low quality prototype.
+But, its not like this all the time. Not all customers agree to pay for a low quality prototype.
 
 The question is not **Can this product be built?** but rather **Should this product be built?** and **Can we build a sustainable business around this product or service?**.
 
@@ -107,7 +124,7 @@ A startup is an experiment to validate the vision.
     * Making an MVP and test how the customers respond
         * This approach might lead to more learning that market research since it leads to observing real customer behaviour instead of hypotetical questions.
         * Showcases real customers needs
-        * Opens up for revealing infromation and problems that we do not know.
+        * Opens up for revealing information and problems that we do not know.
     * A/B testing of existing product
 * Learn and repeat until we have a sustainable business around the vision
 
@@ -133,7 +150,7 @@ The feedback data is both qualitative and quantitaive:
 
 **Build-Measure-Learn**:
 * Figure out what we need to learn
-* use innovation accounting to figure out what we need to measure to know if we are goining validated learning
+* Use *innovation-accounting* to figure out what we should measure, to learn whether we are achieving *validated-learning*
 * Figure out what product we need to build to run that experiment to get the measurements
 
 
@@ -147,19 +164,19 @@ An MVP is the fastest way of getting through the Build-Measure-Learn feedback lo
 Many overestimate the required features in an MVP. If in doubt, then simplify the MVP.
 
 Example:
-* Dropbox: Instead of developing ground braking sync from local to cloud, they made a video showing how it worked and analysed the sumber of people signing up for beta. The numbers skyrocketed - indicating that poeple were interested.
+* Dropbox: Instead of developing ground braking sync from local to cloud, they made a video showing how it worked and analysed the number of people signing up for beta. The numbers skyrocketed - indicating that poeple were interested.
 * Concierge: Manually went home to a few customers to personalize and optimize their grocerie shopping and suggested new recipies based on what they liked. They asked for a small weekly payment for ensure customers were willing to pay. All this before building any software to automate it.
 * Aardvark: Used "Wizard of Oz testing" (faking a service so the customer thinks they are interacting with a service that actually does not exist).
 
 
 ### From the customer perspective
-Customers do not are about but long it takes for a feature/product to be built, their only care about if it serves their needs.
+Customers do not care about how long it takes for a feature/product to be built, their only care is if it serves their needs.
 
 The point here is that an MVP with low quality features might showcase that some "low quality" features actually solves the customers needs better than a "high quality" feature would.
 
 A real MVP should be designed to question the assumptions we are making about what the customers want from the product.
-* If reaction is expected, then we have validated out expextations
-* If the reation is unexpected, then we have counter evidence for our hypothesis
+* If reaction is expected, then we have validated our expectations
+* If the reaction is unexpected, then we have counter evidence for our hypothesis
 
 Regardless, we have achived **validated learning**.
 
@@ -184,11 +201,11 @@ You should only pursue a startup idea if you believe that you can execute the bu
 The brand risk of an MVP can be avoided by branding the MVP as a seperate entity within the organization.
 
 
-### Innivation accouting
+### Innovation Accouting
 Innovation accounting is a technique to extract the right lessions from changes in an uncertain environment.
 
 The innovation accounting technique:
-1. Use an MVP to establish abaseline for where the company is at.
+1. Use an MVP to establish a baseline for where the company is at.
 2. Move from baseline to ideal by learning effectivly.
 3. Pivot or perservere.
 
@@ -202,7 +219,10 @@ This should validate the first learnings of the startup.
 
 
 ### Simply said how a startup should start
-Create a clear baseline of where the company is at. Make an hypothesis about what is need to improve the baseline metric. Design experiments about how to validate the hypothesis. Run the experiments and measure metric changes.
+* Create a clear baseline of where the company is at.
+* Make an hypothesis about what is need to improve the baseline metric.
+* Design experiments about how to validate the hypothesis.
+* Run the experiments and measure metric changes.
 
 
 ### Cohort analysis
@@ -257,7 +277,7 @@ It does not help to reduce cost if it slows down the build-measure-learn feedbac
 
 The goal is to increase the build-measure-learn feedback loop while keeping costs low. The more we learn, the faster we can pivot to something that works, and the faster we can come up with a product that will generate income.
 
-**If you ask any entrepreneur that has compleated a pivot, they will say that they wish they did it sooner**.
+**If you ask any entrepreneur that has completed a pivot, they will say that they wish they did it sooner**.
 
 
 ### Customer Segment Pivot
@@ -283,5 +303,39 @@ Types of Pivot:
 * **Technology Pivot**: Pivot the technology of the product, to make it better or more appealing.
 
 
+### Single Piece Flow
+Compleating a chain of process sequentially will usually lead to faster completing than splitting the objective into multiple tasks and repeating the tasks individually in sequence. This is counterintuitive, but there are some reasons:
+* Compleating the entire chain will lead to faster discorvery of issues --> less waste
+* Overlead in repeating the same task may not be easy to take into consideration
 
 
+### Customer pull + experiments
+Every product should allow customers to ask for new feautures "pull". However, these requests should only be used by the product team for coming up with new experiments. The experiments should be designed to validate learning.
+
+The reason we should not just implement what the customers request is because they often do not know what they actually want.
+
+
+### Sustainable growth
+Sustainable growth is when "New customers come from the actions of past customers".
+
+Ways past customers can drive growth:
+1. **Word of mouth**.
+2. **As a side effect of product usage**. Example, a friend is exposed to PayPal when another friend tries to send money.
+3. **Payed advertisement using revenue**. This require Customer Acquisition Cost (called marginal cost) to be lower than the revenue that a customer generates (called marginal revenue).
+4. Recurring sales from existing customers
+
+
+### Innovation in bigger Companies
+Three main attributes to facilitate:
+* **Scarce but secure resources**: Do not overfund a startup since it need to have urgency (aka see .com bubble). But startups need "some kind" of funding to stay alive. And ideally, these resouces should be safe to prevent the startup from suggenly dying.
+* **Independent authority**: Startups need complete autonomy. No need for approvals. Cross functional teams to speed up product shipping and to increase the build-measure-learn cycle + increase accountability of the product as a team.
+* **Personal stake**: Key people involved in the startup need to have an upside to create incentive to work hard. Feks, through stock options. Other form of invectives are also possible such as credit or alining the startups goals towards strong values of the founders.
+
+Points to facilitate for teams:
+* **Any team can create split-tests**: All teams should be able to test their hypothesis with a split-test and learn from it.
+* **One team must see the project through**: A single team should be responsible for the hypothesis test.
+* **Do testing as fast as possible**: Have a limit of allowed time for hypothesis testing.
+* **Limited testing on customer**: Tests should only affect a small percent of the customers. This can for example be a spesific % of the total number of customers.
+* **Metrics with actionable items**: All experiments have to be evaluated using a standard report with actionale metrics.
+* **The same metrics**: The same metrics must be used to evaluate a product.
+* **Monitor and abbort**: While a test is running, the customers behaviours and side effects must be monitored and the project must be abborted as soon as possible if things does not work out.
