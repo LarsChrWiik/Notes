@@ -116,32 +116,33 @@ Used to manage state without using props. But this introduces global states.
 **Main.js**
 ```js
 import { useState, createContext } from "react"
-import User from "./User"
+import myOtherComponent from "./myOtherComponent"
 
 // Exporting the context to other files can use it.
 export const AppContext = createContext(null)
 
-const [username, setUsername] = useState("")
-
 function myComponent(){
-  <AppContext.Provider value = {username, setUsername}>
-    <Login /> <User />
-  </AppContext.Provider>
+
+  const [username, setUsername] = useState("")
 
   // The username below will be modified from another file using "setUsername" through "AppContext".
   return (
-    <div>
-      {username}
-    </div>
+    <AppContext.Provider value = {username, setUsername}>
+      <div>
+        {username}
+      </div>
+      <myOtherComponent />
+    </AppContext.Provider>
   )
 }
 ```
 
-**User.js**
+**myOtherComponent.js**
 ```js
+import { createContext } from "react"
 import { AppContext } from "./Main"
 
-function myComponent(){
+function myOtherComponent(){
 
   const { username, setUsername } = useContext(AppContext)
   const inputRef = useRef(null)
