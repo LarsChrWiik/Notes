@@ -11,31 +11,27 @@ npm install react-router-dom
 
 ### Example
 * We need to have all other component within the Router component.
-* Pages should be in the Switch component that is within the Router component.
+* Pages should be in the Routes component that is within the Router component.
 
 ```js
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <MyHomePage />
-          </Route>
-          <Route exact path="/about">
-            <MyAboutPage />
-          </Route>
-          <Route exact path="/models:uniqueId">
-            <MyModelPage />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={ <MyHomePage /> } />
+          <Route exact path="/about" element={ <MyAboutPage /> } />
+          <Route exact path="/models:uniqueId" element={ <MyModelPage /> } />
+        </Routes>
       </div>
     </Router>
   )
 }
 ```
+* NB: In v5, `Routes` is called `Switch`
+
 
 ### Router parameter
 ```js
@@ -56,7 +52,7 @@ export function MyModelPage() {
 
 ### Router Links
 * If we want to redirect to pages within our page components, we can use a router link
-* Link components will allow the router to read the URL and match using the Route Switch
+* Link components will allow the router to read the URL and match using the Router
 
 ```js
 import { Link } from "react-router-dom"
@@ -71,7 +67,7 @@ import { Link } from "react-router-dom"
 
 
 ### How to step fetch when redirecting
-We might have a fetch running a page when we switch to another page. We might have an issue if this is the case. But we can do a cleanup before the redirect.
+We might have a fetch running a page when we route to to another page. We might have an issue if this is the case. But we can do a cleanup before the redirect.
 
 ```js
 useEffect(() => {
