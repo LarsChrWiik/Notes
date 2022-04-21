@@ -61,8 +61,8 @@ import { Link } from "react-router-dom"
 <a href="/about">My link button</a>
 <a href={`/model/${uniqueId}`>My model link</a>
 // With
-<Link to="/about">My link button</a>
-<Link to={`/model/${uniqueId}`}>My model link</a>
+<Link to="/about">My link button</Link>
+<Link to={`/model/${uniqueId}`}>My model link</Link>
 ```
 
 

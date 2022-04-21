@@ -111,7 +111,8 @@ function myComponent(){
 
 
 ### useContext
-Used to manage state without using props. But this introduces global states.
+* Used to manage state "for all childeren of a compoent" without using props.
+* But this introduces global states that the given component.
 
 **Main.js**
 ```js
@@ -139,7 +140,6 @@ function myComponent(){
 
 **myOtherComponent.js**
 ```js
-import { createContext } from "react"
 import { AppContext } from "./Main"
 
 function myOtherComponent(){
