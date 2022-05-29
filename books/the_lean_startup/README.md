@@ -306,7 +306,7 @@ Types of Pivot:
 ### Single Piece Flow
 Compleating a chain of process sequentially will usually lead to faster completing than splitting the objective into multiple tasks and repeating the tasks individually in sequence. This is counterintuitive, but there are some reasons:
 * Compleating the entire chain will lead to faster discorvery of issues --> less waste
-* Overlead in repeating the same task may not be easy to take into consideration
+* Overhead in repeating the same task may not be easy to take into consideration
 
 
 ### Customer pull + experiments
