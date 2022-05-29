@@ -327,7 +327,7 @@ Ways past customers can drive growth:
 
 ### Innovation in bigger Companies
 Three main attributes to facilitate:
-* **Scarce but secure resources**: Do not overfund a startup since it need to have urgency (aka see .com bubble). But startups need "some kind" of funding to stay alive. And ideally, these resouces should be safe to prevent the startup from suggenly dying.
+* **Scarce but secure resources**: Do not overfund a startup since it need to have urgency (aka see .com bubble). But startups need "some kind" of funding to stay alive. And ideally, these resouces should be safe to prevent the startup from suddenly dying.
 * **Independent authority**: Startups need complete autonomy. No need for approvals. Cross functional teams to speed up product shipping and to increase the build-measure-learn cycle + increase accountability of the product as a team.
 * **Personal stake**: Key people involved in the startup need to have an upside to create incentive to work hard. Feks, through stock options. Other form of invectives are also possible such as credit or alining the startups goals towards strong values of the founders.
 
