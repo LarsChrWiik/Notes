@@ -220,7 +220,7 @@ This should validate the first learnings of the startup.
 
 ### Simply said how a startup should start
 * Create a clear baseline of where the company is at.
-* Make an hypothesis about what is need to improve the baseline metric.
+* Make an hypothesis about what is needed to improve the baseline metric.
 * Design experiments about how to validate the hypothesis.
 * Run the experiments and measure metric changes.
 
