@@ -243,7 +243,7 @@ The % metric are called **actionable metrics** in the book.
 
 
 ### Kanban validated
-To ensure validated learningm, we have have a kanban board with the following blocks:
+To ensure validated learning, we have have a kanban board with the following blocks:
 * Backlog
 * In progress
 * Built
