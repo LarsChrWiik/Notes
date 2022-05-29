@@ -87,7 +87,7 @@ Instead, the organisation should facilitate for each inidivual running their own
 Senior management has the responsibility to facilitate for this.
 
 
-### The customer does not allways know what they want
+### The customer does not always know what they want
 Even if customers says they do no what a product, it does not mean that the product is useless. It might be that a slight midification of the product will make the customer happy.
 
 
