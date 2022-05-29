@@ -69,7 +69,7 @@ The product is the end result of the strategy. And the product can be optimized 
 
 ### The Lean Startup Method
 1. **Entrepreneurs are everywhere**: Anyone that create a product or service under extreame uncertainty.
-2. **Entrepreneurship is management**: Management focus on extream uncertainty.
+2. **Entrepreneurship is management**: Management focus on extreame uncertainty.
 3. **Validate vision**: Startups exist to learn how to build a sustainable business by running experiments to validate all elements of their vision.
 4. **Build-Measure-Learn**: Turn idea to product, measure how customer respond, either continue or pivot. Accelerate this feed-back-loop.
 5. **Innovation accounting**: Measure progress, have milestones, prioritize work, and hold innovators accountable for their outcomes.
