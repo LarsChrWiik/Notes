@@ -235,7 +235,7 @@ Example of cohorts:
 * Users that used the service 5 times
 * Paying customers
 
-It is important to measure the % changes in the cohort when new product updates are released to try to measure the release's impact. The interesting this about showing this in % is that we can measure a systematic change in user behavior.
+It is important to measure the % changes in the cohort when new product updates are released to try to measure the release's impact. The interesting thing about showing this in % is that we can measure a systematic change in user behavior.
 
 If we were to plot this without using %, then we would perhaps see an exponential graph or revenue and growth and be happy. But that graph would not be that insiteful when measuring the impract of product releases.
 
