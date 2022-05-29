@@ -134,7 +134,7 @@ Define the **Grand vision**. The break it down into the **Value hypothesis** and
 * **Value hypothesis**: How is the product valuable to the customer?
     * When a customer donate their time to something, it is a strong indication that they find it valuable.
 * **Growth hypothesis**: How will the product grow / aquire new customers?
-    * Measure how well the product spreads between employees or departments for the customers. When an employee spread the word to another employee, then it is a strong idication that the product has good growth potential and value.
+    * Measure how well the product spreads between employees or departments for the customers. When an employee spread the word to another employee, then it is a strong indication that the product has good growth potential and value.
 
 **Concierge MVP**: Find early adopters. Make their experience as good as possible. And focus on what the customers actually do, not what they say.
 
