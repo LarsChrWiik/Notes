@@ -138,7 +138,7 @@ Define the **Grand vision**. The break it down into the **Value hypothesis** and
 
 **Concierge MVP**: Find early adopters. Make their experience as good as possible. And focus on what the customers actually do, not what they say.
 
-Test whether the customers will return and whether there is something wrong with the product. Figure out what is wrong and make a choice - either **improve the issues**, or **pivot** he product.
+Test whether the customers will return and whether there is something wrong with the product. Figure out what is wrong and make a choice - either **improve the issues**, or **pivot** the product.
 
 
 ### The feedback loop
