@@ -32,7 +32,7 @@ Summary checklist for your startup:
 ### Entrepreneurs Characteristics
 * Embrace new thinking
 * Keeps focusing on distribution and innovation through uncertain times
-* Disregardd boundaries
+* Disregard boundaries
 * Are enthusiastic
 * Dares the world to stop them
 * Assemble great people
