@@ -42,14 +42,14 @@ Summary checklist for your startup:
 A vision does not change.
 
 A strategy is:
-* the business model
-* product roadmap
-* knowing the competitors
-* knowing who the customers are.
+* The business model
+* Product roadmap
+* Knowing the competitors
+* Knowing who the customers are
 
 We can **Pivot** the strategy if we encounter setbacks.
 
-The product is the end result of the strategy. And the product can be optimized or chnged if we encounter setbacks.
+The product is the end result of the strategy. And the product can be optimized or changed if we encounter setbacks.
 
 
 ### Minimum need for a startup
