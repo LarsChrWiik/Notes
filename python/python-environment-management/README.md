@@ -2,7 +2,7 @@
 # Python's Virtualenv
 We can use virtualenv in Python to create isolated Python environments. This is nice to isolate dependencies for seach projects we are working on.
 
-Virtualenv works by installing files in a directory and then modifying the PATH environment variable to point to the custom bin directory in the virtualenv folder structure. A copy of Python is also within the environment, and Python will look for libraries where python is installed. 
+Virtualenv works by installing files in a directory and then modifying the PATH environment variable to point to the custom bin directory in the virtualenv folder structure. A copy of Python is also within the environment, and Python will look for libraries where python is installed.
 
 To organize your python environments, it is normal to store them within a spesific `Environments` folder, for example at `~/Environments`.
 
@@ -57,6 +57,15 @@ or:
 python3 -m pip install <packageName>
 ```
 
+#### How to install packages from Github directly:
+```bash
+pip install -e git+https://github.com/LarsChrWiik/my_repo#egg=my_custom_package_name
+```
+with **spesific version**:
+```bash
+pip install -e git+https://github.com/LarsChrWiik/my_repo@1.0.0#egg=my_custom_package_name
+```
+
 #### How to install spesific packages version:
 ```bash
 pip install pandas==1.3.3
@@ -88,19 +97,19 @@ python3 -m venv
 
 
 ## Virtualenvwrapper
-virtualenvwrapper is an extention of virtualenv and is a nice tool when working with mutiple virtualenvs. 
+virtualenvwrapper is an extention of virtualenv and is a nice tool when working with mutiple virtualenvs.
 
 
 
 ## Conda
 Conda is Python package management system for multiple langauges (Python included - and was originally created for Python spesifically). Conda works as an alternative to PIP (Preferred Installer Program), which is the default package manager for Python packages.
 
-Conda is also an environment manager, which allows users to run different versions of Python. 
+Conda is also an environment manager, which allows users to run different versions of Python.
 
-Conda package and environment managers are included in all versions of *Anaconda* and *Miniconda*. 
+Conda package and environment managers are included in all versions of *Anaconda* and *Miniconda*.
 
 #### Anaconda vs. Miniconda
-**Anaconda** is a full distribution of software from PyData (includes hunderes of third party packages), while **Miniconda** is only an installer for a conda environment where the users needs to install packages themself. 
+**Anaconda** is a full distribution of software from PyData (includes hunderes of third party packages), while **Miniconda** is only an installer for a conda environment where the users needs to install packages themself.
 
 #### List installed packages
 ```bash
@@ -168,7 +177,7 @@ TODO
 
 
 ## Pyenv + Pyenv-virtualenv
-**Pyenv** is used to manage multiple versions of Python on a single machine. The Python versions are stored in `~/.pyenv/shims`. 
+**Pyenv** is used to manage multiple versions of Python on a single machine. The Python versions are stored in `~/.pyenv/shims`.
 
 Pyenv looks in 4 places to decide which version of Python to use, in priority order:
 * PYENV_VERSION
@@ -181,7 +190,7 @@ How to set python version (create .python-version file):
 pyenv local 3.4.0
 ```
 
-**Pyenv-virtualenv** can be used to create virtualenv with pyenv. 
+**Pyenv-virtualenv** can be used to create virtualenv with pyenv.
 
 ### List installed Python versions
 ```bash
@@ -227,7 +236,7 @@ pyenv uninstall <env-name>
 
 
 ## Pyenv-virtualenvwrapper
-Allows virtualenvwrapper commands when using pyenv environments. 
+Allows virtualenvwrapper commands when using pyenv environments.
 
 
 
@@ -243,7 +252,7 @@ Features include:
 * Automatically adds/removes packages to a Pipfile
 * Automatically loads .env files, if they exist
 
-Pipenv is meant to be used when developing and deploying Python `applications`, `not libraries`. This is beacuse libraries might want to support multiple Python versions with different dependency version. 
+Pipenv is meant to be used when developing and deploying Python `applications`, `not libraries`. This is beacuse libraries might want to support multiple Python versions with different dependency version.
 
 An alternative to pipenv is `poetry`.
 
