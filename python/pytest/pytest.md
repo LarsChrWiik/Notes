@@ -44,6 +44,14 @@ def set_API_KEY(monkeypatch):
 ```
 
 
+### caplog fixture
+Built in fixture in logging that changes the log level.
+```python
+def test_foo(caplog):
+    caplog.set_level(logging.INFO)
+    pass
+```
+
 ### Hooks
 See: https://docs.pytest.org/en/6.2.x/reference.html#hooks
 
