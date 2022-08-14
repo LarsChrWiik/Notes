@@ -262,6 +262,11 @@ An alternative to pipenv is `poetry`.
 ~/.local/share/virtualenvs/<env-name>
 ```
 
+#### Create new environment with python version
+```bash
+pipenv install --python 3.9
+```
+
 #### Activate pipenv environment
 ```bash
 pipenv shell
