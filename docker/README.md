@@ -129,7 +129,7 @@ docker run -it <image-name>
 
 *Interactive mode as Daemon*
 ```bash
-docker run -it -d <image-name>
+docker run -it -d image-name
 ```
 
 ### Run with environment variable
