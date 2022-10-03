@@ -123,13 +123,14 @@ docker run -it -d myImageName
 *Interactive mode + run command in running container*
 
 Example of running the "bash" command in a running comtainer:
+```bash
 docker run -it <image-name>
 ```
 * *NB: windows require "winpty" before the command to run in interactive mode*
 
 *Interactive mode as Daemon*
 ```bash
-docker run -it -d image-name
+docker run -it -d <image-name>
 ```
 
 ### Run with environment variable
