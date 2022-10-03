@@ -75,6 +75,7 @@ docker pull myDockerImageFromDockerHub:latest
 ## List
 
 ### List all running containers
+```
 docker pull <docker-image-from-docker-hub>:<version>
 ```
 
