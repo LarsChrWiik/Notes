@@ -12,13 +12,14 @@
 │   ├── __init__.py
 │   ├── my_app_name
 │   │   ├── __init__.py
-│   │   ├── apps.py
+│   │   ├── apps.py  # Set additional application configuration for the app
+│   │   ├── admin.py  # Registering models to be accessible from the Django admin panel
 │   │   ├── management  # App based manage commands
 │   │   │   ├── __init__.py
 │   │   │   └── commands
 │   │   │       ├── __init__.py
 │   │   │       ├── ...
-│   │   ├── migrations
+│   │   ├── migrations  # History of migrations.
 │   │   │   ├── __init__.py
 │   │   │   ├── 0001_initial.py
 │   │   │   └──...
