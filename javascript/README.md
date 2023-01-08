@@ -6,10 +6,10 @@
 * JavaScript is dynamically typed, meaning that we do not need to add types and it does type checking at run-time as opposed to compile-time (statically typed). However, we can use TypeScript to add types to JavaScript.
 * JavaScript conforms to ECMAScript (a JavaScript standard meant to ensure the interoperability of web pages across different web browsers).
 * JavaScript can be run:
-    * On the client/browser (**Frontend**). 
+    * On the client/browser (**Frontend**).
     * A server using Node.js (**Backend**).
-    * For mobile developmenet with **React Native**. 
-    * For desktop applications with Electron JS. 
+    * For mobile developmenet with **React Native**.
+    * For desktop applications with Electron JS.
 * JavaScript is a **prototypal object oriented language**, meaning that objects directly inherit from other objects.
 
 
@@ -18,7 +18,7 @@ ES6 was a major enhancement of JavaScript and was published in **2015**, see: ht
 * **ES6** is also known as "**ECMAScript 6**", "**ECMAScript 2015**", and "**JavaScript 6**"
 * ES6 gave a lot of new functionality such as:
   * let and const
-  * Exponentiation operator "\*\*" (same as the "pow" function) 
+  * Exponentiation operator "\*\*" (same as the "pow" function)
   * Default parameter values in functions
   * Array.find()
   * Array.findIndex()
@@ -53,9 +53,9 @@ node myJsFile.js
 
 
 ## Class
-Classes, Arrays, and Functions are all objects. Essentially, everything in JavaScript is an object except for the primitive data types. JavaScript is a **prototypal object oriented language**, meaning that objects directly inherit from other objects. 
+Classes, Arrays, and Functions are all objects. Essentially, everything in JavaScript is an object except for the primitive data types. JavaScript is a **prototypal object oriented language**, meaning that objects directly inherit from other objects.
 
-Functions within objects that uses the **class** keyword are automatically put in the **prototype** (like in any other language with inheritance). This ensures that all instances of the object-type shares the same instance of the function-object. This is more efficient, compared to having the function within the object itself (like the constructor pattern), since it is then replicated for all instances of the object. 
+Functions within objects that uses the **class** keyword are automatically put in the **prototype** (like in any other language with inheritance). This ensures that all instances of the object-type shares the same instance of the function-object. This is more efficient, compared to having the function within the object itself (like the constructor pattern), since it is then replicated for all instances of the object.
 
 
 ## The Console (in browsers)
@@ -66,14 +66,14 @@ console.error("This is an error")
 console.warn("This is a warning")
 ```
 
-We can also measure time taken using **console.time()** and **console.timeEnd()**. 
+We can also measure time taken using **console.time()** and **console.timeEnd()**.
 
 ### Printing Variables
 ```js
 console.log("My name is " + name + " and I am " + " age years old")
 ```
 ```js
-console.log(`My name is ${name} and I am ${age} years old`) // Must be ` not " nor '. 
+console.log(`My name is ${name} and I am ${age} years old`) // Must be ` not " nor '.
 ```
 
 
@@ -95,7 +95,7 @@ It can also be added on top of a function to make just that function comply to t
 ```js
 function myFunction() {
   "use strict"
-  x = 10 // This with cause an error since x is not declared. 
+  x = 10 // This with cause an error since x is not declared.
 }
 ```
 
@@ -109,7 +109,7 @@ function myFunction() {
 const name = "Mark Zuckerberg"
 ```
 
-* **Number**: There is no "float" of "integer" in JavaScript. Number can be **NaN**, which means **Not A Number**. 
+* **Number**: There is no "float" of "integer" in JavaScript. Number can be **NaN**, which means **Not A Number**.
 ```js
 const age = 34
 ```
@@ -117,18 +117,18 @@ const age = 34
 const pi = 3.141592
 ```
 
-* **Boolean**: Either "true" or "false". 
+* **Boolean**: Either "true" or "false".
 ```js
 isNice = true
 ```
 
-* **null** / **undefined**: null and undefined are both used to represent the absence of some value. 
+* **null** / **undefined**: null and undefined are both used to represent the absence of some value.
 ```js
 let x = null
 let y = undefined
 ```
 
-* **Symbol**: Symbols are completely unique identifiers with static properties (similar to ENUM). 
+* **Symbol**: Symbols are completely unique identifiers with static properties (similar to ENUM).
 
 * **String, Number and Boolean as objects**: It is also possible to initialize String, Number and Boolean as objects. However, initializing primitive types with **new** is not recomended, since **===** is a conparison function that compares the data type.
 ```js
@@ -143,7 +143,7 @@ const myBoolean = new Boolean(true)
 
 
 ### Typeof
-We can use **typeof** to check the type of an attribute JavaScript: 
+We can use **typeof** to check the type of an attribute JavaScript:
 ```js
 let age = 50
 console.log(typeof(age))  // Res: "number"
@@ -195,7 +195,7 @@ if (age1 == 18 && age2 != 18 || age3 == 20) {
 }
 ```
 
-Oneline if-else sentence. 
+Oneline if-else sentence.
 ```js
 let age = 17
 let myCondition = age >= 18 ? "You are of legal age" : "You are underage"
@@ -205,7 +205,7 @@ let myCondition = age >= 18 ? "You are of legal age" : "You are underage"
 ## Array
 An Array in JavaScript is actually an ArrayList and supports functions such as **push**, **pop**, **shift**, **unshift**, **Length**, etc.
 
-There are two main ways of initializing an Array. 
+There are two main ways of initializing an Array.
 Initializing the Array as an object:
 ```js
 const numbers = new Array(5,3,"Hello",2)
@@ -217,7 +217,7 @@ const numbers2 = [5,3,"Hello",2]
 ```
 
 ### Array Mutation
-Arrays that are declated as "**const**" can still be mutated using bracket notation. 
+Arrays that are declated as "**const**" can still be mutated using bracket notation.
 ```js
 const myArray = [1,2,3]
 myArray[1] = 10
@@ -245,7 +245,7 @@ let myArray = [8,4,6,0,2,7]
 myArray.sort()  // res: [0, 2, 4, 6, 7, 8]
 ```
 
-A sort function can be added to compare elements. 
+A sort function can be added to compare elements.
 ```js
 function customSortFunc(a, b) {
   ...
@@ -256,7 +256,7 @@ myArray.sort(customSortFunc)
 ```
 
 ### Array.find() and Array.findIndex()
-The **find** function returns the first element in an Array that satisfies a condition from a given function. 
+The **find** function returns the first element in an Array that satisfies a condition from a given function.
 ```js
 const myArray = [50, 39, 60, 10, 38]
 myArray.find(x => x > 55)  // res: 60
@@ -272,7 +272,7 @@ myArray.findIndex(x => x > 55)  // res: 2
 ## Unpacking / Spread operator
 The spread operation "..." is used to convert an array of elements into several individual elements. An example is that it converts ([1,2,3]) to (1,2,3).
 
-This has several use cases such as copying arrays, concatinating arrays, destructuring, and spreading the elements in an array to use them as function parameters instead of the array itself. 
+This has several use cases such as copying arrays, concatinating arrays, destructuring, and spreading the elements in an array to use them as function parameters instead of the array itself.
 ```js
 const myArray = [1,2,3]
 const myArrayCopy = [...myArray] // This will copy myArray.
@@ -289,7 +289,7 @@ for (let i = 0; i < 10; i++){
 ```
 
 ### Foreach (indexes)
-**index** is the index in myArray. The value can be accessed with myArray[i]. 
+**index** is the index in myArray. The value can be accessed with myArray[i].
 ```js
 for (let index in myArray) {
   console.log(myArray[i])
@@ -362,7 +362,7 @@ switch (age) {
 ### Class Pattern Object (ES6)
 This is the new and **noraml way** of creating classes in ES6+ world.
 
-When using the class pattern object, all future instances of the object **will share the same instaces of the internal functions** since it is stored within the **prototype**. 
+When using the class pattern object, all future instances of the object **will share the same instaces of the internal functions** since it is stored within the **prototype**.
 ```js
 class Person {
   constructor(name, age) {
@@ -383,12 +383,12 @@ let bob = new Person("Bob", 50)
 ### Constructor Pattern Object (ES5)
 This was the old way of creating classes in ES5 world.
 
-When using the constructor pattern object, all future instances of the object **will create its own instace of the internal functions** since it is not stored within the **prototype**. 
+When using the constructor pattern object, all future instances of the object **will create its own instace of the internal functions** since it is not stored within the **prototype**.
 ```js
 function Person(name, age){
   this.name = name
   this.age = age
-  
+
   this.myFunction = function() {
     ...code...
   }
@@ -397,7 +397,7 @@ function Person(name, age){
 let bob = new Person("Bob", 50)
 ```
 
-To share the same function for every Person objects, we can add functions to the **protptype** manually. 
+To share the same function for every Person objects, we can add functions to the **protptype** manually.
 ```js
 let Person = function(name, age) {
   this.name = name
@@ -411,11 +411,26 @@ Person.prototype.getAge = function() {
 let bob = new Person("Bob", 50)
 ```
 
+### Function Overloading
+Having a function with multiple parameters is possible in Javascript:
+```js
+function greet(name) {
+  console.log(`Hello, ${name}`);
+}
+
+function greet(firstName, lastName) {
+  console.log(`Hello, ${firstName} ${lastName}`);
+}
+
+// This will call the second function, because it matches the provided arguments
+greet('John', 'Doe'); // outputs 'Hello, John Doe'
+```
+
 
 ## Object
 
 ### Object Literal
-Object literals are key-value pairs, kind of like a dict in Python, but with the ability to apply funcitons to itself! Nested object literals are allowed. 
+Object literals are key-value pairs, kind of like a dict in Python, but with the ability to apply funcitons to itself! Nested object literals are allowed.
 
 The object literal pattern should be used if we want to create a data structure with no initalization time and no need for constructor, dependency injection, etc.
 ```js
@@ -441,13 +456,13 @@ const fName = person.firstName
 const lName = person.lastName
 ```
 
-We can use **destructuring assignment**: 
+We can use **destructuring assignment**:
 ```js
 const { firstName, lastName } = person
 ```
 
 ### Making an object inmutable (Object.freeze)
-**Object.freeze** can be used to freeze the state of an object in JavaScript by making it immutable, i.e. you cannot change its properties. This also applies for Arrays, since an Array is an object. 
+**Object.freeze** can be used to freeze the state of an object in JavaScript by making it immutable, i.e. you cannot change its properties. This also applies for Arrays, since an Array is an object.
 ```js
 let myFreezedObject = Object.freeze(myObject)
 ```
@@ -460,6 +475,23 @@ class Customer extends Person {
     this.customerID = customerID
   }
 }
+```
+
+### Hashmap
+In Javascript, we can use an Object as a Hashmap.
+```js
+const myMap = {}
+myMap['A'] = 'value1';
+myMap['B'] = 'value2';
+
+const val1 = myMap['A']
+const myBool = 'C' in myMap  // false
+
+const keysInMyMap = Object.keys(myMap)  // ['A', 'B']
+const valuesInMyMap = Object.values(map)  // ['value1', 'value2']
+
+// Delete key from map.
+delete myMap['B'];
 ```
 
 
@@ -582,7 +614,7 @@ function ifExists(key, array) {
 ```
 
 ### Function Argument Destructuring
-We can specify what elements to use from the input Object. 
+We can specify what elements to use from the input Object.
 Argument Destructuring is often used with JSON calls / API calls.
 ```
 function myFunction5({ firstName, lastName, age}) {
@@ -607,7 +639,7 @@ const myObjects = [
 
 JSON.stringify(myObjects)
 /*
-res: 
+res:
 {
   {
     "id": 1,
@@ -623,9 +655,9 @@ res:
 
 
 ## Import and Export modules
-The main way to import and export JavaScript files in Node.js is by using the **require** statement and the **modules.export** statement. 
+The main way to import and export JavaScript files in Node.js is by using the **require** statement and the **modules.export** statement.
 
-Another way of sharing modules were introduced in ES6 with the satements **import** and **export** / **export defaults**. 
+Another way of sharing modules were introduced in ES6 with the satements **import** and **export** / **export defaults**.
 
 ### Require / Modules.export (Standard)
 ```js
@@ -635,9 +667,9 @@ exports.addOne = function (x) {
 }
 ```
 ```js
-// Import the function using require. 
+// Import the function using require.
 const functionsFromFile = require('./otherJsFile.js');
-const myVal = functionsFromFile.addOne(10) // myVal is 11. 
+const myVal = functionsFromFile.addOne(10) // myVal is 11.
 ```
 
 ### Import
@@ -650,7 +682,7 @@ function addOne(x) {
 export { addOne }
 ```
 ```js
-// Import the function using import from ES6. 
+// Import the function using import from ES6.
 import { addOne } from "./otherJsFile.mjs"
 const myVal = addOne(10) // myVal is 11
 ```
@@ -676,25 +708,25 @@ A promise contains a function with two parameters (**resolve**, **reject**).
 *resolve* and *reject* are callback functions.
 
 A promise can be in different states:
-* **pending**: waiting to get data. 
-* **fullfilled**: successfully resolved. 
-* **rejected**: some error happend. 
+* **pending**: waiting to get data.
+* **fullfilled**: successfully resolved.
+* **rejected**: some error happend.
 
 A promise uses **then** and **catch** statements.
-* **then**: receives an executable function when the promise has been *fullfilled*. 
-* **catch**: receives an executable function when the promise is *rejected*. 
+* **then**: receives an executable function when the promise has been *fullfilled*.
+* **catch**: receives an executable function when the promise is *rejected*.
 
 ```js
 let promise1 = new Promise( (resolve, reject) => { ... } );
 ```
 
 ### Fetch
-Fetch is function that inputs a URL and converts it into a Promise. 
+Fetch is function that inputs a URL and converts it into a Promise.
 ```js
 let myPromise = fetch("https://api.github.com/users/LarsChrWiik")
 ```
 
-Fetch and fill the Promise return functions **then** and **catch**: 
+Fetch and fill the Promise return functions **then** and **catch**:
 ```js
 fetch(myURL)
   .then((data) => {
@@ -706,8 +738,8 @@ fetch(myURL)
 ```
 
 ### Fetch vs jQuery.ajax()
-* fetch does not reject HTTP error status if it is 404 or 500, but rather sets "*ok*" status to *false* and will only reject if there is a network error. 
-* fetch wont send of recieve cookies by default. If the site relies on authentication sessions, then the requests will be unauthenticated. 
+* fetch does not reject HTTP error status if it is 404 or 500, but rather sets "*ok*" status to *false* and will only reject if there is a network error.
+* fetch wont send of recieve cookies by default. If the site relies on authentication sessions, then the requests will be unauthenticated.
 
 ### Creating a Promise:
 ```js
