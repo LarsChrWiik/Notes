@@ -89,3 +89,170 @@ const PieceMap: { [key: string]: string } = {
 * **Cypress**:
   * Used for end to end testing.
   * Has built-in support for automatic retries to retry flaky tests
+
+
+### The "unknown" type
+* The Known should be used instead of any when we know we will set the type at a later time.
+* It can also be used to do downcasting in hierarchical programming.
+
+The unknown type is commonly used to avoid the any type. Instead of having no type or any type, we assign it to unknown. Everything assigned to this type will result in an error unless you assign it to another type at some point.
+
+Example:
+```ts
+let myThing: unknown;
+```
+
+
+### The "never" type
+* The never type is used to indicate that the type is never going to be needed.
+* The "never" type is only a tool for annotating your code, and does not have any special behavior or runtime effects.
+  * Function: A function with a return type of never indicates that the dunction will never return.
+  * Value: A value with the never type cannot be assigned. This functionality is useless.
+  * Function parameter: A function with a parameter of type never indicates to other developers that this function should never be used with this parameter.
+
+**Function**:
+```ts
+throwError(msg: string): never {
+  throw new Error(msg)
+}
+```
+```ts
+function infiniteLoop(): never {
+  while (true) {
+  }
+}
+```
+
+**Variable**.
+```ts
+let x: never;  // Thiss value is never assigned to anything
+```
+
+**Function parameter**:
+```ts
+function processData(data: string) {
+  // function body
+}
+
+function foo(x: never) {
+  // This function is never supposed to be called with a value for x.
+  // If it is called with a value for x, it is a bug in the code.
+  throw new Error("This function should not be called with a value for x");
+}
+
+let data: string | undefined;
+
+if (data !== undefined) {
+  processData(data);
+} else {
+  foo(undefined);
+}
+```
+
+
+### The "is" functionality
+* The "is" word is used to cast the input parameter for the user of the function so we do not have to check types for the user.
+
+Example of using **Polimophism** and returning downcasting the type as the return of the function:
+```js
+function isDog1(animal: Animal): animal is Dog {  // <--- Returning Dog type.
+  if (animal instanceof Dog) return true
+  return false
+}
+
+function isDog2(animal: Animal): animal is Dog {  // <--- Returning Dog type.
+  if (animal instanceof Dog) return true
+  return false
+}
+
+function doSomething(animal: Animal) {
+  if (isDog1(animal)) {
+    animal.bark()  // Type error, Animal does not have functional called "bark"!
+
+    // What we have to do is:
+    (animal as Dog).bark()  // This works, but it is ugly since the downcasting is dependent on the function isDog1 in this case.
+  }
+  if (isDog2(animal)) {
+    // The type of animal in here is now Dog and the text editor now understands it.
+    // It works because isDog2 uses "animal is Dog".
+    animal.bark()
+  }
+  ...
+}
+```
+
+
+### The "satisfies" operator
+* Introduced in Typescript 4.9.
+* Used to infer the type of the object from the "interface".
+* This means that when we use the object afterwards, we can use functions from attributes that has optional or conditional values.
+
+
+Old way:
+```ts
+type interface User {
+  id: number,
+  firstName: string,
+  lastName: string,
+  yearBorn: number | string,
+}
+
+const myUser: User {
+  id: 1,
+  firstName: 'John',
+  lastName: 'Doe',
+  yearBorn: "1950",
+}
+
+const myUser.yearBorn.??? // <-- the type of myUser.yearBorn is unknown here since it can be number of string.
+```
+
+Instead we can use "satisfied":
+```ts
+type interface User {
+  id: number,
+  firstName: string,
+  lastName: string,
+  yearBorn: number | string,
+}
+
+const myUser {
+  id: 1,
+  firstName: 'John',
+  lastName: 'Doe',
+  yearBorn: "1950",
+} satisfies User
+
+const myUser.yearBorn. // <-- yearBorn is a String! we can use String functions here and the text editor understands it.
+```
+
+
+### Enum mistake
+Do not create enums without values, since then they become numbers.
+
+```ts
+enum Status {
+  inProgress,  // This is inferred as 0
+  Success,  // This is inferred as 1
+  Fail,  // This is inferred as 2
+}
+
+Status(100)  // This is a legal input.
+```
+
+A better way is to use strings as values:
+```ts
+enum Status {
+  InProgress = 'InProgress',
+  Success = 'Success',
+  Fail = 'Fail',
+}
+```
+
+
+### Utility functions
+*** **Omit**: TODO.
+*** **Partial**: TODO.
+*** **Record**: TODO.
+***
+
