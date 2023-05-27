@@ -24,7 +24,7 @@ npx ts-jest config:init
 ```
 
 Add to package json for complicity
-```
+```json
 "scripts": {
     "test": "jest --watchAll --verbose"
 }
@@ -32,7 +32,7 @@ Add to package json for complicity
 
 Adding types for jest
 Create jsconfig.json and add:
-```
+```json
 {
     "typeAcquisition": {
         "include": [

@@ -94,6 +94,18 @@ npm uninstall packageName
 ```
 
 
+### .npmrc
+* The **.npmrc** file is used to configure npm on a per-project basis.
+* The **.npmrc** file is usually located in the root directory of the project.
+* Examples are fields in the **.npmrc** file:
+    * registry: The URL of the npm registry to use.
+    * prefix: The location to install global packages.
+    * proxy: The URL of the proxy server to use.
+    * engine-strict: If set to true, then npm will exit with an error instead of a warning when the current Node.js version is not supported by the package.
+    * save-exact: If set to true, then npm will save exact versions of installed packages instead of using npm’s default semver range operator.
+    * cache: The location of npm’s cache directory.
+
+
 ## Yarn
 Similar to **npm**, **yarn** is a JavaScript package managers.
 Some people prefer yarn, others npm.
