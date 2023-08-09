@@ -1,0 +1,32 @@
+
+.myContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.myContainer div, .myContainer2 div{
+    border: 1px black solid;
+    padding: 10px;
+    margin: 1px;
+}
+
+.myContainer2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#box1 {
+    flex: 2;
+    order: 2;
+}
+
+#box2 {
+    flex: 1;
+    order: 1;
+}
+
+#box3 {
+    flex: 1;
+    order: 3;
+}

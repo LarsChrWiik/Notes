@@ -1,0 +1,143 @@
+
+/* This is settings for everything */
+/*
+*{
+    padding: 0;
+}
+*/
+
+header{
+    font-size: xx-large;
+    padding: 30px;
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
+body{
+    background-color: #e7e5e5;
+    color: #777777;
+    font-family: 'Courier New';
+    font-size: 20px;
+    line-height: 1.6em;
+}
+
+h3{
+    color: green;
+}
+
+h4{
+    color: rgb(0, 255, 0)
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+/* Change state "hover" */
+a:hover {
+    color: red
+}
+
+
+/* The dot notation is used to target a class */
+.myBox{
+    background-color: #db9328;
+}
+
+.myContainer1{
+    width: 200px;
+    background-color: aqua;
+}
+
+.myContainer2{
+    width: 50%;
+    background-color: brown;
+}
+
+.myContainer3{
+    background-color: rgb(42, 165, 159);
+    border-right: 5px red solid;
+    border-top: 10px blue;
+    border-top-style: dotted;
+    padding-top: 20px;
+    margin: auto;
+    width: 300px;
+}
+
+.myContainer4{
+    border: 5px solid;
+    border-width: 5px;
+    border-color: orange;
+    border-radius: 20px;
+    background-color: #cae048;
+    margin: auto;
+    width: 400px;
+}
+
+.categories{
+    background-color: rgb(231, 155, 219);
+}
+
+/* Settings for h2 in categories */
+.categories h2{
+    color: green;
+}
+
+.categories ul{
+    color: purple;
+    font-family: Helvetica;
+}
+
+.categories li {
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #000;
+}
+
+.myForm input[type=text]{
+    padding: 10px;
+    width:100%;
+    margin: 20px;
+}
+
+.larsContainer {
+    width: 33%;
+    float: left;
+}
+
+/* "#" is used when we spesify an "id" */
+#larsContainerID {
+    width: 50%;
+    /*border: 3px solid;*/
+    /*border-color: #000;*/
+    background-color: aqua;
+    overflow: hidden;
+}/*box-sizing: border-box;*/
+
+.relativeBoxTest{
+    width: 800px;
+    height: 500px;
+    border: 2px #000 solid;
+    position: relative; /* RELATIVE POSITION */
+    background-image: url("../images/cat.jpg");
+}
+
+.relativeBoxTest p{
+    position: absolute;
+    top: 300px;
+    left: 350px;
+    color: white;
+    font-family: Arial;
+}
+
+.blackButton {
+    background-color: #000;
+    color: white;
+}
+
+.fixedPosition {
+    position: fixed;
+    top: 200px;
+    right: 0;
+}
