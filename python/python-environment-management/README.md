@@ -343,4 +343,72 @@ pipenv --rm
 
 
 ## poetry
-Poetry is kind of like Maven (in Java) for Python, in other words, a build management tool. With Poetry, we can build, package, and publish our application. Among others, it allows us to write lock files. It also gives insight into dependecies.
+Poetry is a build management tool for dependency resolution and installment, similar to pipenv (or Maven in Java). With Poetry, we can build, package, and publish our application. It also allows us to create **lock files**.
+
+Poetry is known for its simplicity and ease of use. It uses `pyproject.toml` as its configuration file, which is a standard for Python projects.
+
+### Poetry vs. Pipenv - Which one to use?
+* Poetry's dependency resolution is more robust and tends to handle complex dependencies more gracefully than Pipenv.
+* Poetry has been noted for its faster dependency resolution and installation process compared to Pipenv. This can significantly speed up the setup process for large projects with many dependencies.
+* Poetry's lock file is often considered more reliable and less prone to merge conflicts, especially in collaborative projects compared with Pipenv.
+* Poetry simplifies the process of package versioning and publishing to PyPI.
+* Pipenv is officially recommended by Heroku for Python applications. Heroku's native support for Pipenv makes it a convenient choice for developers deploying applications on this platform.
+
+### Poetry commands
+You should run poetry install before poetry shell (unlike Pipenv).
+
+#### Create new project from scratch
+```sh
+poetry new my-project
+```
+
+#### Install from pyproject.toml
+Install all dependencies from `pyproject.toml` into a virtualenv. Install will update the correct environment (or create a new one if it does not exist) and install the dependencies. **NB**: `Poetry install` will install dev packages as well. If you want to install only production packages, use `poetry install --no-dev`
+```sh
+poetry install
+```
+```sh
+poetry install --no-dev
+```
+
+#### Activate shell
+```sh
+poetry shell
+```
+
+#### Add dependency
+```sh
+poetry add <packageName>
+```
+How to add to dev dependencies:
+```sh
+poetry add <packageName> --dev
+```
+
+#### Update
+Update will update the dependencies to their latest versions within the constraints specified in `pyproject.toml` and regenerates the poetry.lock file.
+```sh
+poetry update
+```
+
+#### Remove environment
+We need to list evironment and then delete it using `rm -rf <path-to-environment>`.
+```sh
+poetry env info
+```
+Find the path to your environment.
+```sh
+rm -rf <path-to-environment>
+```
+
+
+#### Loading from .env using Poetry
+To be able to load from `.env` files from Poetry, we need to install the `python-dotenv` package.
+```sh
+poetry add python-dotenv
+```
+And you need to load the .env file in your code:
+```py
+from dotenv import load_dotenv
+load_dotenv()  # This will load the .env file at the project root
+```

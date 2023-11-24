@@ -4,11 +4,11 @@ See: https://packaging.python.org/glossary
 
 ## Overview / History
 See: https://www.pypa.io/en/latest/history/
-* **Year 2000 - Distutils**: Old tool for packaging through setup.py. 
-* **Year 2003 - PyPi**: Python Package Index (PyPi) released, which is an index for Python packages. 
+* **Year 2000 - Distutils**: Old tool for packaging through setup.py.
+* **Year 2003 - PyPi**: Python Package Index (PyPi) released, which is an index for Python packages.
 * **Year 2004 - Setuptools**: Better version of distutils + easy_install.
-* **Year 2008 - Pip**: Replacement for easy_install. 
-* **Year 2013 - Wheels**: Support for building and installing wheel files were added. 
+* **Year 2008 - Pip**: Replacement for easy_install.
+* **Year 2013 - Wheels**: Support for building and installing wheel files were added.
 * **Year 2014 - Automatic pip**: Pip becomes dominant from Python 3.4. Pip no longer require setuptools to install wheels.
 * **Year 2017 - Pipenv**: The new Pipenv tool stated to be the recommended Python packaging tool, but then no release in 2 years.
 * **Year 2020 - Pip dependency resolver**: Pip 20.3 added dependency resolver feature.
@@ -16,13 +16,13 @@ See: https://www.pypa.io/en/latest/history/
 
 
 ## Distutils
-Distutils (distribution utilities) is the **dinosaur** tool that helps Python packages (mainly non-pure-python packages) to install. 
+Distutils (distribution utilities) is the **dinosaur** tool that helps Python packages (mainly non-pure-python packages) to install.
 
-Distutils packages contain by convention a **setup.py** file, a **source distribution**, and a **binary distribution**. 
+Distutils packages contain by convention a **setup.py** file, a **source distribution**, and a **binary distribution**.
 
 Distutils was added in Python 1.6 in year 2000.
 
-Most Python users does **not want to use distutels directly**, but rather **Setuptools**. 
+Most Python users does **not want to use distutels directly**, but rather **Setuptools**.
 
 
 
@@ -38,7 +38,7 @@ EasyInstall is a package manager bundled with setuptools used to install librari
 ## Setup file
 **setup.py** is a python file that indicates that the project is a distributable package.
 
-A basic setup file look like this: 
+A basic setup file look like this:
 ```python
 from distutils.core import setup
 setup(
@@ -65,9 +65,6 @@ It is not considered good practice to pin dependencies to spesific versions, or 
 
 **requirements.txt** are thought of as a list of requirements for a python environment, while the **install_requires** list is thought of as a list of dependencies for project. **requirements.txt** files often contain pinned versions used by repeatable build scripts, while **install_requires** should be as broad as possible. We can also use lock files to ensure repeatable builds instead of relying on open source versions not being modified.
 
-### setup.cfg
-TODO
-
 
 ## Source Distribution
 Source distribution file format (sdist) are generated using:
@@ -77,10 +74,8 @@ python setup.py sdist
 Source distribution contains metadata to install the package.
 
 
-
 ## Built distribution
-Built distributions contains files and metadata that only need to be moved to the correct lib location for the project. An example of a built distribuiton format is *wheel*. 
-
+Built distributions contains files and metadata that only need to be moved to the correct lib location for the project. An example of a built distribuiton format is *wheel*.
 
 
 ## Wheel file format
@@ -97,9 +92,9 @@ python setup.py bdist_wheel
 There are sessentially **3 types of wheels**:
 * Universal (suppoerted by Python2 and 4)
 * Pure-Python (Supports either Python 2 or 3)
-* Platform (Supported by a platform). 
+* Platform (Supported by a platform).
 
-You can read from the wheel name what type of wheel we are looking at - see {python} and {platform} in "Wheel naming convention". 
+You can read from the wheel name what type of wheel we are looking at - see {python} and {platform} in "Wheel naming convention".
 
 ### Wheel naming convention
 A wheel filename has the following format:
