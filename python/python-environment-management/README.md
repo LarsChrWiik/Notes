@@ -370,6 +370,10 @@ poetry install
 ```sh
 poetry install --no-dev
 ```
+How to sync from lock files.
+```sh
+poetry install --sync
+```
 
 #### Activate shell
 ```sh
@@ -383,6 +387,16 @@ poetry add <packageName>
 How to add to dev dependencies:
 ```sh
 poetry add <packageName> --dev
+```
+
+#### Remove Dependency
+```sh
+poetry remove <packageName>
+```
+
+#### Update Dependency
+```sh
+poetry update <packageName>
 ```
 
 #### Update
